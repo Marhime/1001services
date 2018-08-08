@@ -19,6 +19,7 @@
 }
 #activities{
     width: 100%;
+    position: relative;
     .act-container{
         margin-bottom: rem(50);
         .full-width-act{
@@ -107,7 +108,8 @@
 }
 #news{
     background-color: $light;
-    padding-bottom: rem(40);
+    padding-bottom: rem(80);
+    position: relative;
     .news{
         .article{
             color: $dark;
@@ -210,7 +212,7 @@
             text-align: center;
             line-height: 20px;
             font-weight: $fw-bold;
-            padding-top: rem(5);
+            padding-top: rem(10);
             
         }
     }

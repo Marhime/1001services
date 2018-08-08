@@ -179,6 +179,24 @@ canvas {
   .shadow.dark {
     background-color: rgba(25, 24, 26, 0.6); }
 
+.separator {
+  position: absolute;
+  width: 350%; }
+  .separator.left {
+    top: 0;
+    left: 0;
+    transform: rotate(180deg); }
+  .separator.right {
+    bottom: 0;
+    right: 0; }
+  .separator.white path {
+    fill: #FFFFFF; }
+  .separator.blue path {
+    fill: #70b7e5; }
+  .separator.light path {
+    fill: #f5f6f5; }
+
+/* Big half circle */
 #loader-wrapper .loader-section {
   position: fixed;
   top: 0;
@@ -406,7 +424,7 @@ header {
   width: 18.75rem;
   max-width: 80%;
   height: 100%;
-  background-color: #19181a;
+  background-color: #70b7e5;
   z-index: 90;
   transition: all 0.2s linear; }
   .mobile-menu.active {
@@ -424,6 +442,48 @@ header {
         font-size: 1.25em;
         letter-spacing: 0.125px; }
 
+footer {
+  background-color: #70b7e5;
+  padding-top: 3.75rem;
+  position: relative; }
+  footer .footer-elems .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    footer .footer-elems .links a {
+      text-decoration: none;
+      color: #FFFFFF;
+      margin-bottom: 0.625rem; }
+      footer .footer-elems .links a:last-of-type {
+        margin: 0; }
+  footer .footer-elems .logo-footer {
+    padding-top: 3.125rem; }
+    footer .footer-elems .logo-footer p {
+      font-size: 1.5em;
+      color: #FFFFFF;
+      font-weight: 700;
+      text-align: center; }
+  footer .footer-elems .contact {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+    text-align: center; }
+    footer .footer-elems .contact a {
+      text-decoration: none;
+      color: #FFFFFF; }
+    footer .footer-elems .contact p {
+      color: #FFFFFF;
+      margin-bottom: 0.625rem;
+      font-style: italic; }
+      footer .footer-elems .contact p:last-of-type {
+        margin: 0; }
+      footer .footer-elems .contact p:first-of-type {
+        margin-top: 1.25rem; }
+  footer .copyright {
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0.8;
+    padding-bottom: 0.625rem; }
+
 #how {
   background-color: #f5f6f5;
   padding-bottom: 2.5rem; }
@@ -439,7 +499,8 @@ header {
       margin-bottom: 1.25rem; }
 
 #activities {
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   #activities .act-container {
     margin-bottom: 3.125rem; }
     #activities .act-container .full-width-act .block-act {
@@ -514,7 +575,8 @@ header {
 
 #news {
   background-color: #f5f6f5;
-  padding-bottom: 2.5rem; }
+  padding-bottom: 5rem;
+  position: relative; }
   #news .news .article {
     color: #19181a;
     display: block;
@@ -598,7 +660,7 @@ header {
     text-align: center;
     line-height: 20px;
     font-weight: 700;
-    padding-top: 0.3125rem; }
+    padding-top: 0.625rem; }
 
 /* ---- particles.js container ---- */
 #particles-js {
@@ -659,7 +721,7 @@ header {
 @media (min-width: 768px) {
   header .hero-wrapper {
     margin: auto;
-    padding-top: 5.625rem;
+    padding-top: 7.5rem;
     max-width: 46.5625rem; }
     header .hero-wrapper h2 {
       font-size: 3.125em; }
@@ -737,11 +799,24 @@ header {
       #testimonials .users-testimonials blockquote {
         width: 80%;
         margin-left: auto;
-        margin-right: auto; } }
+        margin-right: auto; }
+  footer {
+    padding: 0; }
+    footer .footer-elems {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3.125rem 0; }
+      footer .footer-elems .logo-footer {
+        padding-top: 0; }
+      footer .footer-elems .contact {
+        padding: 0; }
+  .separator {
+    width: 280%; } }
 
 @media (min-width: 1024px) {
   header .hero-wrapper {
-    padding-top: 12.5rem;
+    padding-top: 10.625rem;
     max-width: 75%; }
     header .hero-wrapper p {
       max-width: 80%;
@@ -764,6 +839,8 @@ header {
         header .hero-wrapper #search .form-group .form-select,
         header .hero-wrapper #search .form-group .input-search {
           margin-bottom: 0; }
+    header .hero-wrapper .search-more {
+      margin-top: 3.125rem; }
   header #navigation .toggle {
     display: none; }
   header #navigation .brand h1 {
@@ -815,7 +892,11 @@ header {
   #testimonials .users-testimonials .quote {
     top: 15%; }
   #testimonials .users-testimonials blockquote {
-    padding-top: 6.875rem;
+    padding-top: 1.875rem;
     width: 80%;
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto; }
+  footer .footer-elems {
+    justify-content: space-around; }
+  .separator {
+    width: 150%; } }

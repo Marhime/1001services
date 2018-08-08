@@ -91,3 +91,34 @@ canvas{
     background-color: rgba($dark, $alpha: 0.6);
   }
 }
+.separator{
+  position: absolute;
+  width: 350%;
+  &.left{
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+  }
+  &.right{
+    bottom: 0;
+    right: 0;
+  }
+  &.white{
+    path {
+      fill: $white;
+    }
+  }
+  &.blue{
+    path {
+      fill: $blue1;
+    }
+  }
+  &.light{
+    path {
+      fill: $light;
+    }
+  }
+}
+/* Big half circle */
+#bigHalfCircle{
+  }

@@ -2,7 +2,7 @@
 @media (min-width: 1024px) {
     header{
         .hero-wrapper{
-            padding-top: rem(200);
+            padding-top: rem(170);
             max-width: 75%;
             p{
                 max-width: 80%;
@@ -31,6 +31,9 @@
                 }
                 
             
+            }
+            .search-more{
+                margin-top: rem(50);
             }
         }
         #navigation{
@@ -133,11 +136,19 @@
                 top: 15%;
             }
             blockquote{
-                padding-top: rem(110);
+                padding-top: rem(30);
                 width: 80%;
                 margin-left: auto;
                 margin-right: auto;
             }
         }
+    }
+    footer{
+        .footer-elems{
+            justify-content: space-around;
+        }
+    }
+    .separator{
+        width: 150%;
     }
 }
