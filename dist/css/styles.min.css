@@ -1,0 +1,170 @@
+/*
+Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+@param {Number} $num - Number to strip unit from.
+@returns {Number} The same number, sans unit.
+*/
+/*
+Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+@param {Number} $num - Number to strip unit from.
+@returns {Number} The same number, sans unit.
+*/
+/*
+Converts one or more pixel values into matching rem values.
+@param {Number|List} $values - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
+
+@param {Number} $base [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
+
+@returns {List} A list of converted values.
+*/
+/*
+Converts a pixel value to matching rem value. *Any* value passed, regardless of unit, is assumed to be a pixel value. By default, the base pixel value used to calculate the rem value is taken from the `$global-font-size` variable.
+@access private
+@param {Number} $value - Pixel value to convert.
+@param {Number} $base [null] - Base for pixel conversion.
+@returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
+*/
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none; }
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+li {
+  list-style: none; }
+
+/* =============================================================================
+   BASE
+   ========================================================================== */
+/* ---- base ---- */
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF; }
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+body {
+  font: normal 16px Open sans, sans-serif; }
+
+canvas {
+  display: block;
+  vertical-align: bottom; }
+
+/* ---- particles.js container ---- */
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-color: #2c3e50; }
+
+header {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%; }
+
+.logo {
+  width: 11.875rem;
+  border-radius: 50%;
+  height: 11.875rem;
+  position: absolute;
+  background-color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .logo svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+    user-select: none;
+    width: 70%;
+    height: 70%; }
+  .logo .cls-1 {
+    font-size: 46px;
+    fill: #2980b9;
+    font-family: OpenSans-Extrabold, Open Sans;
+    font-weight: 700;
+    letter-spacing: -0.03em; }
+  .logo .cls-2 {
+    font-size: 37px;
+    fill: #2c3e50;
+    letter-spacing: -0.03em; }
+  .logo .cls-3 {
+    fill: #fefefe; }
+  .logo .cls-4 {
+    fill: #2a80b8;
+    animation: animate 4000ms infinite ease-in-out; }
+  .logo .cls-5 {
+    fill: #2d3e51; }
+  .logo .cls-6 {
+    fill: #f7f9fa; }
+  .logo .cls-7 {
+    fill: #2a7eb5; }
+  .logo .cls-8 {
+    fill: #2f4053; }
+
+@keyframes animate {
+  0% {
+    transform: translate(-610.4 -453.2); }
+  50% {
+    transform: translate(-603.4 -463.2); }
+  100% {
+    transform: translate(-610.4 -453.2); } }

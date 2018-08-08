@@ -1,0 +1,143 @@
+// DESKTOP
+@media (min-width: 1024px) {
+    header{
+        .hero-wrapper{
+            padding-top: rem(200);
+            max-width: 75%;
+            p{
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            #search{
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+                width: 100%;
+                .form-group{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-right: 10px;
+                    label{
+                        display: block;
+                        align-self: flex-start;
+                        margin-left: rem(5);
+                        font-size: em(10);
+                    }
+                    .form-select,
+                    .input-search{
+                        margin-bottom: 0;
+                    }
+                }
+                
+            
+            }
+        }
+        #navigation{
+            .toggle{
+                display: none;
+            }
+            .brand{
+                h1{
+                    font-size: em(24);
+                }
+            }
+            .desktop-menu{
+                display: block;
+                z-index: 90;
+                .lm-desktop{
+                    display: flex;
+                    a{
+                        padding-left: rem(25);
+                        display: block;
+                        color: $white;
+                        font-size: em(20);
+                        letter-spacing: 0.125px;
+                    }
+                }
+            }
+            &.fixed{
+                background-color: $white;
+                position: fixed;
+                z-index: 50;
+                border-bottom: 1px solid #efefef;
+                .brand{
+                    h1{
+                        color: $dark;
+                    }
+                }
+                .desktop-menu{
+                    a{
+                        color: $dark;
+                    }
+                }
+            }
+        }
+    }
+    #activities{
+        .act-container{
+            .full-width-act{
+                .block-act{
+                    &:hover{
+                        .background{
+                                transform: scale(1.05);
+                            }
+                        .shadow{
+                            background-color: rgba($dark, $alpha: 0.4);
+                        }
+                    }
+                }
+            }
+            .half-width-act{
+                .block-act{
+                    &:hover{
+                        .background{
+                                transform: scale(1.05);
+                            }
+                        .shadow{
+                            background-color: rgba($dark, $alpha: 0.4);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #news{
+        .news{
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .article{
+                width: calc(50% - 20px);
+                height: 100%;
+                img{
+                    height: rem(200);
+                }
+            &:hover{
+                img{
+                    background-color: rgba($dark, $alpha: 0.4);
+                }
+            }
+            }
+        }
+    }
+    #testimonials{
+        .users-testimonials{
+            .block-testi{
+                width: calc(50% - 20px);
+            }
+            .quote{
+                top: 15%;
+            }
+            blockquote{
+                padding-top: rem(110);
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

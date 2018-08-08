@@ -1,0 +1,81 @@
+@import "variables";
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #2c3e50;
+}
+
+.logo{
+  width: rem(190);
+  border-radius: 50%;
+  height: rem(190);
+  position: absolute;
+  background-color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+    user-select: none;
+    width: 70%;
+    height: 70%;
+  }
+
+  .cls-1 {
+    font-size: 46px;
+    fill: #2980b9;
+    font-family: OpenSans-Extrabold, Open Sans;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .cls-2 {
+    font-size: 37px;
+    fill: #2c3e50;
+    letter-spacing: -0.03em;
+  }
+
+  .cls-3 {
+    fill: #fefefe;
+  }
+
+  .cls-4 {
+    fill: #2a80b8;
+    animation: animate 4000ms infinite ease-in-out;
+  }
+
+  .cls-5 {
+    fill: #2d3e51;
+  }
+
+  .cls-6 {
+    fill: #f7f9fa;
+  }
+
+  .cls-7 {
+    fill: #2a7eb5;
+  }
+
+  .cls-8 {
+    fill: #2f4053;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-610.4 -453.2);
+  }
+  50% {
+    transform: translate(-603.4 -463.2);
+  }
+  100% {
+    transform: translate(-610.4 -453.2);
+  }
+}

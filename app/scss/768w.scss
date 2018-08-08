@@ -1,0 +1,122 @@
+// TABLET
+@media (min-width: 768px) {
+    header{
+        .hero-wrapper{
+            margin: auto;
+            padding-top: rem(90);
+            max-width: rem(745);
+            h2{
+                font-size: em(50);
+            }
+            p{
+                font-size: em(18);
+            }
+            #search{
+                width: 80%;
+                margin-top: rem(30);
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+    #how{
+        .howit{
+           display: flex;
+           justify-content: space-around;
+           .block{
+               width: calc(33% - 30px);
+           }
+        }
+    }
+    #activities{
+        padding-bottom: rem(60);
+        .act-container{
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            .full-width-act{
+                .block-act{
+                    border-radius: 4px;
+                    margin: rem(20) 0;
+                    .background{
+                    }
+                    p{
+                        font-size: em(28);
+                    }
+                }
+            }
+            .half-width-act{
+                display: flex;
+                justify-content: space-between;
+                .block-act{
+                    border-radius: 4px;
+                    width: calc(50% - 10px);
+                    height: 320px;
+                    p{
+                        font-size: em(28);
+                    }
+                }
+                
+            }
+        }
+    }
+    #last-users{
+        .last-users{
+            display: flex;
+            justify-content: space-around;
+            .block-last-user{
+                color: $dark;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: rem(150);
+                    height: rem(150);
+                    border-radius: 50%;
+                    margin-bottom: rem(20);
+                }
+                .name{
+                    font-weight: $fw-bold;
+                    font-size: em(20);
+                    margin-bottom: rem(10);
+                }
+                p:last-child{
+                    font-size: em(18);
+                }
+            }
+        }
+    }
+    #news{
+        .news{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .article{
+                width: calc(50% - 10px);
+                height: 100%;
+                img{
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+    #testimonials{
+        padding-bottom: rem(60);
+        .users-testimonials{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .block-testi{
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            blockquote{
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

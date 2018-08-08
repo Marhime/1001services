@@ -1,0 +1,217 @@
+#how{
+    background-color: $light;
+    padding-bottom: rem(40);
+    .howit{
+       .block{
+           text-align: center;
+           img{
+               width: rem(160);
+               height: rem(160);
+               display: block;
+               margin: 0 auto;
+               padding: rem(20) 0;
+           }
+           p{
+               margin-bottom: rem(20);
+           }
+        }
+    }
+}
+#activities{
+    width: 100%;
+    .act-container{
+        margin-bottom: rem(50);
+        .full-width-act{
+            .block-act{
+                position: relative;
+                width: 100%;
+                height: 320px;
+                overflow: hidden;
+                background-color: aqua;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .background{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: 0.4s;
+                }
+                .picto{
+                    position: absolute;
+                    width: rem(50);
+                    height: rem(50);
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, -60%);
+                    z-index: 5;
+                }
+                p{
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, 120%);
+                    color: $white;
+                    font-size: em(28);
+                    font-weight: $fw-reg;
+                }
+            }
+        }
+        .half-width-act{
+            .block-act{
+                position: relative;
+                width: 100%;
+                height: 320px;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .background{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: 0.4s;
+                }
+                .picto{
+                    position: absolute;
+                    width: rem(60);
+                    height: rem(60);
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, -60%);
+                    z-index: 5;
+                }
+                p{
+                    position: absolute;
+                    top: 50%;
+                    right: 50%;
+                    transform: translate(50%, 120%);
+                    color: $white;
+                    font-size: em(28);
+                    font-weight: $fw-reg;
+                }
+            }
+        }
+        .btn-more{
+           display: flex;
+           justify-content: center;
+           align-content: center;
+        }
+    }
+}
+#news{
+    background-color: $light;
+    padding-bottom: rem(40);
+    .news{
+        .article{
+            color: $dark;
+            display: block;
+            margin-bottom: rem(50);
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                margin-bottom: rem(20);
+            }
+            h3{
+                margin-left: rem(10);
+                margin-bottom: rem(10);
+                font-size: em(24);
+            }
+            .date{
+                margin-left: rem(35);
+                position: relative;
+                font-style: italic;
+                color: $dark-grey; 
+                &::before{
+                    content: "";
+                    width: rem(15);
+                    height: rem(1);
+                    background-color: $dark-grey;
+                    position: absolute;
+                    left: rem(-20);
+                    top: 50%;
+                    margin-right: 20px;
+                }
+            }
+            p:last-child{
+                font-size: em(18);
+                padding: rem(30) rem(10) 0 rem(10);
+            }
+        }
+    }
+}
+#last-users{
+    background-color: $light;
+    padding-bottom: rem(40);
+    .last-users{
+        .block-last-user{
+            color: $dark;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: rem(40);
+            img{
+                width: rem(150);
+                height: rem(150);
+                border-radius: 50%;
+                margin-bottom: rem(20);
+            }
+            .name{
+                font-weight: $fw-bold;
+                font-size: em(20);
+                margin-bottom: rem(10);
+            }
+            p:last-child{
+                font-size: em(18);
+            }
+        }
+    }
+}
+#testimonials{
+    padding-bottom: rem(60);
+    .users-testimonials{
+        .block-testi{
+            position: relative;
+            width: 100%;
+            -webkit-box-shadow: 0px 0px 30px -6px rgba(194,194,194,1);
+            -moz-box-shadow: 0px 0px 30px -6px rgba(194,194,194,1);
+            box-shadow: 0px 0px 30px -6px rgba(194,194,194,1);
+            margin-bottom: rem(30);
+            padding: rem(20);
+        }
+        .quote{
+            display: block;
+            width: rem(30);
+            height: rem(30);
+            margin: 0 auto;
+        }
+        .quoter{
+            width: rem(50);
+            height: rem(50);
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+        blockquote{
+            text-align: center;
+            padding: rem(0) rem(10) 0 rem(10);
+            padding: rem(30) 0;
+        }
+        p{
+            text-align: center;
+            line-height: 20px;
+            font-weight: $fw-bold;
+            padding-top: rem(5);
+            
+        }
+    }
+}
