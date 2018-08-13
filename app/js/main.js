@@ -2,26 +2,28 @@ $menu = document.querySelector('.mobile-menu');
 $body = document.body;
 $toggle = document.querySelector('.toggle');
 
-$toggle.addEventListener('click', function(){
-    if(this.classList.contains('close')){
-        this.classList.remove('close');
-    }
-    else{
-        this.classList.add('close');
-    }
-    if($menu.classList.contains('active')){
-        $menu.classList.remove('active');
-    }
-    else{
-        $menu.classList.add('active');
-    }
-    if($body.classList.contains('menu-open')){
-        $body.classList.remove('menu-open');
-    }
-    else{
-        $body.classList.add('menu-open');
-    }
-})
+if($toggle){
+    $toggle.addEventListener('click', function(){
+        if(this.classList.contains('close')){
+            this.classList.remove('close');
+        }
+        else{
+            this.classList.add('close');
+        }
+        if($menu.classList.contains('active')){
+            $menu.classList.remove('active');
+        }
+        else{
+            $menu.classList.add('active');
+        }
+        if($body.classList.contains('menu-open')){
+            $body.classList.remove('menu-open');
+        }
+        else{
+            $body.classList.add('menu-open');
+        }
+    })
+}
 document.addEventListener('click', function(e){
     if(e.target == $menu || e.target == $toggle){
         return;
@@ -32,10 +34,12 @@ document.addEventListener('click', function(e){
 });
 window.onscroll = function() {
     var menu = document.getElementById("navigation");
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        menu.classList.add('fixed');
-    } else {
-        menu.classList.remove("fixed");
+    if(menu){
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            menu.classList.add('fixed');
+        } else {
+            menu.classList.remove("fixed");
+        }
     }
 };
 document.addEventListener('DOMContentLoaded', function(event){

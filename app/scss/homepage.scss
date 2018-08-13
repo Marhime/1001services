@@ -1,6 +1,4 @@
 #how{
-    background-color: $light;
-    padding-bottom: rem(40);
     .howit{
        .block{
            text-align: center;
@@ -18,8 +16,6 @@
     }
 }
 #activities{
-    width: 100%;
-    position: relative;
     .act-container{
         margin-bottom: rem(50);
         .full-width-act{
@@ -49,6 +45,7 @@
                     right: 50%;
                     transform: translate(50%, -60%);
                     z-index: 5;
+                    transition: 0.4s;
                 }
                 p{
                     position: absolute;
@@ -58,6 +55,7 @@
                     color: $white;
                     font-size: em(28);
                     font-weight: $fw-reg;
+                    transition: 0.4s;
                 }
             }
         }
@@ -99,17 +97,10 @@
                 }
             }
         }
-        .btn-more{
-           display: flex;
-           justify-content: center;
-           align-content: center;
-        }
+
     }
 }
 #news{
-    background-color: $light;
-    padding-bottom: rem(80);
-    position: relative;
     .news{
         .article{
             color: $dark;
@@ -151,8 +142,6 @@
     }
 }
 #last-users{
-    background-color: $light;
-    padding-bottom: rem(40);
     .last-users{
         .block-last-user{
             color: $dark;
@@ -179,7 +168,6 @@
     }
 }
 #testimonials{
-    padding-bottom: rem(60);
     .users-testimonials{
         .block-testi{
             position: relative;

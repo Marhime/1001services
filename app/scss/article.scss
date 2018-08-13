@@ -1,0 +1,34 @@
+#article{
+    padding-top: rem(40);
+    .art-ctn{
+        .article-img{
+            width: 100%;
+            height: rem(300);
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .tt-01{
+            padding-top: rem(30);
+            padding-bottom: rem(10);
+        }
+        .date{
+            text-align: center;
+        }
+        .article-content{
+            padding-top: rem(40);
+            width: 90%;
+            margin: 0 auto;
+            p{
+                margin-bottom: rem(20);
+            }
+            a{
+                color: $blue1;
+                font-weight: $fw-bold;
+            }
+        }
+    }
+}

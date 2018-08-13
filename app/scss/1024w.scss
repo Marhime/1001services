@@ -1,11 +1,10 @@
 // DESKTOP
 @media (min-width: 1024px) {
-    header{
+    .hero-header{
         .hero-wrapper{
             padding-top: rem(170);
-            max-width: 75%;
             p{
-                max-width: 80%;
+                max-width: 90%;
                 margin: 0 auto;
             }
             #search{
@@ -17,17 +16,15 @@
                     display: flex;
                     flex-direction: column;
                     width: 100%;
-                    margin-right: 10px;
-                    label{
-                        display: block;
-                        align-self: flex-start;
-                        margin-left: rem(5);
-                        font-size: em(10);
-                    }
+                    margin-right: rem(10);
+                    margin-bottom: 0;
                     .form-select,
                     .input-search{
                         margin-bottom: 0;
                     }
+                }
+                input[type='submit']{
+                    width: 70%;    
                 }
                 
             
@@ -79,27 +76,13 @@
     }
     #activities{
         .act-container{
-            .full-width-act{
-                .block-act{
-                    &:hover{
-                        .background{
-                                transform: scale(1.05);
-                            }
-                        .shadow{
-                            background-color: rgba($dark, $alpha: 0.4);
+            .block-act{
+                &:hover{
+                    .background{
+                        transform: scale(1.05);
                         }
-                    }
-                }
-            }
-            .half-width-act{
-                .block-act{
-                    &:hover{
-                        .background{
-                                transform: scale(1.05);
-                            }
-                        .shadow{
-                            background-color: rgba($dark, $alpha: 0.4);
-                        }
+                    .shadow{
+                        background-color: rgba($dark, $alpha: 0.4);
                     }
                 }
             }
@@ -143,7 +126,7 @@
             }
         }
     }
-    footer{
+    #footer{
         .footer-elems{
             justify-content: space-around;
         }
@@ -151,4 +134,13 @@
     .separator{
         width: 150%;
     }
+    #sign-up{
+        .sign-up-container{
+            width: 80%;
+            .tt-01{
+                padding-top: 0;
+            }
+        }
+    }
+    
 }

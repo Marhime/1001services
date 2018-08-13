@@ -12,7 +12,7 @@
     <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/styles.css">
     <!--endbuild-->
-    <title>1001 Services | Page d'acceuil</title>
+    <title>1001 Services | Page d'accueil</title>
 </head>
 <body>
     <div id="loader-wrapper">
@@ -20,17 +20,17 @@
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
-    <header class="header">
+    <header class="hero-header">
         <div id="navigation" class="wrapper">
-            <div class="brand">
+            <a href="index.html" class="brand">
                 <h1>1001Services</h1>
-            </div>
+            </a>
             <div class="toggle"></div>
             <nav class="desktop-menu">
                 <ul class="lm-desktop">
                     <li><a href="#c">Se connecter</a></li>
-                    <li><a href="#i">S'inscrire</a></li>
-                    <li><a href="#ip">S'inscrire comme pro</a></li>
+                    <li><a href="inscription.html">S'inscrire</a></li>
+                    <li><a href="inscription.html">S'inscrire comme pro</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,7 +40,7 @@
                 sizes="100vw"
                 alt="">
         <div class="shadow dark"></div>
-        <div class="hero-wrapper">
+        <div class="hero-wrapper container">
             <h2>Que recherchez vous&nbsp;?</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, suscipit numquam. Quo error doloremque dolorem necess itatibus quero maniba.</p>
             <form action="" id="search" method="post">
@@ -67,13 +67,13 @@
     <div class="mobile-menu">
         <ul class="lm-mobile">
             <li><a href="#">Se connecter</a></li>
-            <li><a href="#">S'inscrire</a></li>
-            <li><a href="#">S'inscrire comme Pro</a></li>
+            <li><a href="inscription.html">S'inscrire</a></li>
+            <li><a href="inscription.html">S'inscrire comme Pro</a></li>
         </ul>
     </div>
     </header>
     <main>
-        <section id="how">
+        <section id="how" class="light">
             <div class="container">
                 <h2 class="tt-01">Comment ca marche&nbsp;?</h2>
                 <div class="howit">
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </section>
-        <section id="activities">
+        <section id="activities" class="white">
             <h2 class="tt-01">Toutes nos activites</h2>
             <div class="act-container">
                 <div class="full-width-act">
@@ -114,7 +114,7 @@
                         <p>Bien-etre</p>
                     </a>
                     <a href="#" class="block-act">
-                        <img src="images/homepage/cours_1280.jpg" alt="">
+                        <img class="background" src="images/homepage/cours_1280.jpg" alt="">
                         <img class="picto" src="images/cours.svg" alt="">
                         <div class="shadow light"></div>
                         <p>Cours</p>
@@ -122,20 +122,20 @@
                 </div>
                 <div class="full-width-act">
                     <a href="#" class="block-act">
-                        <img src="images/homepage/event_1280.jpg" alt="">
+                        <img class="background" src="images/homepage/event_1280.jpg" alt="">
                         <img class="picto" src="images/event.svg" alt="">
                         <div class="shadow light"></div>
                         <p>Evenement</p>
                     </a>
                 </div>
-                <div class="btn-more">
-                    <a class="btn-01 more">
-                        Voir plus
-                    </a>
-                </div>
             </div> 
+            <div class="btn-more">
+                <a class="btn-01 more">
+                    Voir plus
+                </a>
+            </div>
         </section>
-        <section id="news">
+        <section id="news" class="light">
             <!-- <svg class="separator white" id="bigTriangleColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none">
                 <path d="M0 0 L50 100 L100 0 Z" />
             </svg>  -->
@@ -164,33 +164,38 @@
             </svg>                                              
             <h2 class="tt-01">Les dernieres actualites</h2>
             <div class="news">
-                <a href="#" class="article">
+                <a href="article.html" class="article">
                     <img src="images/hero-01-mobile.jpg" alt="">
                     <h3>Titre de l'article</h3>
                     <p class="date">22 juillet 2018</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor totam sunt atque dignissimos, repellendus consectetur quo saep...</p>
                 </a>
-                <a href="#" class="article">
+                <a href="article.html" class="article">
                     <img src="images/hero-01-mobile.jpg" alt="">
                     <h3>Titre de l'article</h3>
                     <p class="date">22 juillet 2018</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor totam sunt atque dignissimos, repellendus consectetur quo saep...</p>
                 </a>
-                <a href="#" class="article">
+                <a href="article.html" class="article">
                     <img src="images/hero-01-mobile.jpg" alt="">
                     <h3>Titre de l'article</h3>
                     <p class="date">22 juillet 2018</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor totam sunt atque dignissimos, repellendus consectetur quo saep...</p>
                 </a>
-                <a href="#" class="article">
+                <a href="article.html" class="article">
                     <img src="images/hero-01-mobile.jpg" alt="">
                     <h3>Titre de l'article</h3>
                     <p class="date">22 juillet 2018</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor totam sunt atque dignissimos, repellendus consectetur quo saep...</p>
                 </a>
             </div>
+            <div class="btn-more">
+                <a href="articles-list.html" class="btn-01 more">
+                    Voir plus
+                </a>
+            </div>
         </section>
-        <section id="testimonials">
+        <section id="testimonials" class="white">
             <div class="container">
                 <h2 class="tt-01">Les temoignages</h2>
                 <div class="users-testimonials">
@@ -218,7 +223,7 @@
                 </div>
             </div>
         </section>
-        <section id="last-users">
+        <section id="last-users" class="light">
             <div class="container">
                 <h2 class="tt-01">Les derniers inscrits</h2>
                 <div class="last-users">

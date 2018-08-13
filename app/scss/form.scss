@@ -1,0 +1,84 @@
+.sign-side{
+    display: none;
+}
+#sign-up{
+    display:  flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    #logo-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: rem(80);
+        background-color: $blue1;
+        .return{
+            width: rem(20);
+            height: rem(20);
+            display: block;
+        }
+        &:after{
+            content: '';
+            flex-basis: auto;
+        }
+    }
+    .copyright{
+        text-align: center;
+        color: $dark;
+        opacity: 0.8;
+        padding: rem(30) 0;
+        background-color: $light;
+        font-size: em(14);
+        line-height: 1.2;
+    }
+    .return-link{
+        display: none;
+    }
+    .sign-up-container{
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: rem(40);
+        .tt-01{
+            padding: rem(30) 0;
+            font-size: em(26);
+        }
+        .mandatory{
+            color: $red1;
+            margin-bottom: rem(20);
+            text-align: right;
+            font-style: oblique;
+        }
+        label{
+            color: $dark-grey;
+            font-size: em(15);
+            margin-bottom: rem(5);
+            span{
+                font-size: em(18);
+                color: $red1;
+            }
+        }
+        .sign-in{
+            text-align: center;
+            padding-top: rem(15);
+            a{
+                color: $blue1;
+            }
+        }
+        input,
+        select{
+            margin-top: rem(2);
+            margin-bottom: rem(10);
+        }
+        input[type='submit']{
+            margin: rem(20) auto;
+            display: block;
+            width: 50%;    
+        }
+        input[name='name']{
+            text-transform: uppercase;
+        }
+        input[name='nickname']{
+            text-transform: capitalize;
+        }
+    }
+}

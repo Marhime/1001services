@@ -39,6 +39,19 @@ canvas{
   max-width: 1280px;
   margin: 0 auto;
 }
+section{
+  padding-bottom: rem(80);
+  position: relative;
+  &.white{
+    background-color: $white;
+  }
+  &.blue{
+    background-color: $blue1;
+  }
+  &.light{
+    background-color: $light;
+  }
+}
 .tt-01{
   font-size: em(38);
   text-align: center;
@@ -47,6 +60,9 @@ canvas{
   font-weight: $fw-reg;
   text-rendering: optimizelegibility;
   letter-spacing: 1px;
+  .blue &{
+    color: $white;
+  }
 }
 .tt-02{
   text-align: center;
@@ -60,12 +76,11 @@ canvas{
   border-radius: 4px;
   border: 0px;
   background-color: $blue1;
-  height: 48px;
   width: 100%;
+  height: rem(50);
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  float: right;
   white-space: nowrap;
   cursor: pointer;
   font-family: $font;
@@ -76,6 +91,11 @@ canvas{
     margin-top: rem(50);
     width: rem(240);
   }
+}
+.btn-more{
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .shadow{
   position: absolute;
@@ -119,6 +139,38 @@ canvas{
     }
   }
 }
-/* Big half circle */
-#bigHalfCircle{
-  }
+
+select,
+input{
+    outline: none;
+    font-size: 15px;
+    line-height: 24px;
+    color: #484848;
+    background-color: $white;
+    border: 1px solid rgba($dark, $alpha: 0.2);
+    height: 100%;
+    width: 100%;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    border-radius: 4px;
+    padding-left: rem(10);
+    position: relative;
+    appearance: none;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    background: url("data:image/svg+xml;utf8,<svg fill='#666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>") $white;
+    background-size: rem(25);
+    background-position: 98% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.logo-sign{
+  font-size: em(24);
+  color: $white;
+  font-weight: $fw-bold;
+  text-align: center;
+}

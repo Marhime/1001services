@@ -1,10 +1,9 @@
 // TABLET
 @media (min-width: 768px) {
-    header{
+    .hero-header{
         .hero-wrapper{
             margin: auto;
             padding-top: rem(120);
-            max-width: rem(745);
             h2{
                 font-size: em(50);
             }
@@ -98,6 +97,10 @@
                 img{
                     border-radius: 4px;
                 }
+            &:last-child {
+                margin-left: auto;
+                margin-right: auto;
+            }
             }
         }
     }
@@ -119,7 +122,7 @@
             }
         }
     }
-    footer{
+    #footer{
         padding: 0;
         .footer-elems{
             display: flex;
@@ -137,5 +140,69 @@
     }
     .separator{
         width: 280%;
+    }
+    .sign-side{
+        display: block;
+        width: 40%;
+        min-height: 100vh;
+        background: url(../images/aside_subscribe.jpg);
+        background-size: cover;
+        background-position-x: 72%;
+        position: relative;
+        &.left{
+            float: left;
+        }
+        &.right{
+            float: right;
+        }
+    }
+    #sign-up{
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        min-height: 100vh;
+        height: 100vh;
+        position: relative;
+        #logo-header{
+            display: none;
+        }
+        .copyright{
+            font-size: em(14);
+        }
+        .return-link{
+            display: flex;
+            color: $blue1;
+            font-size: em(18);
+            width: rem(100);
+            margin: rem(16);
+            .return{
+                width: rem(25);
+                height: rem(25);
+            }
+        }
+        .sign-up-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            width: 85%;
+            padding: 0;
+            .tt-01{
+                font-size: em(38);
+            }
+            input[type='submit']{
+                margin-top: rem(20);   
+            }
+            input[name='name']{
+                text-transform: uppercase;
+            }
+            input[name='nickname']{
+                text-transform: capitalize;
+            }
+            .sign-in{
+                padding-bottom: rem(15);
+                padding-top: 0;
+            }
+        }
     }
 }
