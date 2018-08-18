@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html  lang="fr" class="no-js"> <![endif]-->
+<html  lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+    <title>1001 Services | Profil {{nom}}</title>
+</head>
+<body>
+    <div id="loader-wrapper">
+        <img id="loader" src="images/svg/rocket-loader.svg" alt="" srcset="">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div id="navigation" class="wrapper white">
+        <a href="index.html" class="brand">
+            <h1>1001Services</h1>
+        </a>
+        <div class="toggle"></div>
+        <nav class="desktop-menu">
+            <ul class="lm-desktop">
+                <li><a onclick="document.getElementById('login-modal').style.display='flex'">Se connecter</a></li>
+                <li><a onclick="document.getElementById('signup-modal').style.display='flex'">S'inscrire comme pro</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mobile-menu">
+        <ul class="lm-mobile">
+            <li><a onclick="document.getElementById('login-modal').style.display='flex'">Se connecter</a></li>
+            <li><a onclick="document.getElementById('signup-modal').style.display='flex'">S'inscrire comme Pro</a></li>
+        </ul>
+    </div>
+    <div id="login-modal" class="modal">
+        <div class="modal-container">
+            <aside class="sign-side right">
+            </aside>
+            <div class="form-ctn">
+                <header id="logo-header" class="wrapper">
+                    <a onclick="document.getElementById('login-modal').style.display='none'"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
+                    <a class="logo-sign" href="index.html">1001Services</a>
+                </header>
+                <div class="close-ctn">
+                    <div onclick="document.getElementById('login-modal').style.display='none'" class="close"></div>
+                </div>
+                <div class="sign-up-container">
+                    <h1 class="tt-01">Connexion</h1>
+                    <form action="">
+                        <label for="email">Adresse mail</label>
+                        <input type="email" name="email" id="email">
+                        <label for="mdp">Mot de passe</label>
+                        <input type="password" name="mdp" id="phone">
+                        <input class="btn-01" type="submit" value="Se connecter">
+                    </form>
+                    <p class="sign-in"><a href="password.html">Mot de passe oublie?</a></p>
+                    <p class="sign-in">Pas encore de compte? <a onclick="document.getElementById('login-modal').style.display='none'; document.getElementById('signup-modal').style.display='flex'">S'inscrire</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="signup-modal" class="modal">
+        <div class="modal-container">
+            <aside class="sign-side left">
+            </aside>
+            <div class="form-ctn">
+                <header id="logo-header" class="wrapper">
+                    <a onclick="document.getElementById('signup-modal').style.display='none'"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
+                    <a class="logo-sign" href="index.html">1001Services</a>
+                </header>
+                <div class="close-ctn">
+                    <div onclick="document.getElementById('signup-modal').style.display='none'" class="close"></div>
+                </div>
+                <div class="sign-up-container">
+                    <h1 class="tt-01">Demande d'inscription</h1>
+                    <p class="mandatory">Champs obligatoires *</p>
+                    <form action="">
+                        <label for="gender">Civilite <span>*</span></label>
+                        <select name="gender" id="gender" required>
+                            <option value="mme">Madame</option>
+                            <option value="mr">Monsieur</option>
+                        </select>
+                        <label for="name2">Nom <span>*</span></label>
+                        <input type="text" name="name2" id="name2" required>
+                        <label for="nickname">Prenom <span>*</span></label>
+                        <input type="text" name="nickname2" id="nickname2" required>
+                        <label for="email2">Adresse mail <span>*</span></label>
+                        <input type="email" name="email2" id="email2" required>
+                        <label for="phone2">Telephone <span>*</span></label>
+                        <input type="tel" name="phone2" id="phone2" required>
+                        <input class="btn-01" type="submit" value="S'inscrire">
+                    </form>
+                    <p class="sign-in">Vous avez deja un compte? <a onclick="document.getElementById('signup-modal').style.display='none'; document.getElementById('login-modal').style.display='flex'">Se connecter</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cantfind-modal" class="modal">
+        <div class="modal-container">
+            <aside class="sign-side left">
+            </aside>
+            <div class="form-ctn">
+                <header id="logo-header" class="wrapper">
+                    <a onclick="document.getElementById('cantfind-modal').style.display='none'"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
+                    <a class="logo-sign" href="index.html">1001Services</a>
+                </header>
+                <div class="close-ctn">
+                    <div onclick="document.getElementById('cantfind-modal').style.display='none'" class="close"></div>
+                </div>
+                <div class="sign-up-container">
+                    <h1 class="tt-01">Vous ne trouvez pas ?</h1>
+                    <p class="mandatory">Champs obligatoires *</p>
+                    <form action="">
+                        <label for="email1">Adresse mail <span>*</span></label>
+                        <input type="email" name="email1" id="email1" required>
+                        <label for="subject1">Sujet <span>*</span></label>
+                        <input type="text" name="subject1" id="subject1" required>
+                        <label for="message1">Message <span>*</span></label>
+                        <textarea name="message1" id="message1" cols="30" rows="10"></textarea>
+                        <input class="btn-01" type="submit" value="Envoyer">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <main id="profil-page">
+        <div class="container profil">
+            <aside class="infos-side">
+                <div class="block-pro infos">
+                    <p class="title">Infos</p>
+                    <p class="surname-i">Nan</p>
+                    <p class="name-i">GUO</p>
+                    <img class="avatar" src="images/jonh-doe.jpg" alt="">
+                    <p class="resume">Plombier</p>
+                    <p class="status">Pro</p>
+                    <div class="cta">
+                        <a class="btn-01" href="tel:+33658211366">Appeler</a>
+                        <a class="btn-01" href="mailto:maxime.joyes@gmail.com">Contacter</a>
+                    </div>
+                    <div class="info">
+                        <img src="images/svg/maps-and-flags.svg" alt="Adresse">
+                        <p>Paris - 75012</p>
+                    </div>
+                    <div class="info">
+                        <img src="images/svg/phone-receiver.svg" alt="Telephone">
+                        <a href="tel:+0633437721">06 33 43 77 21</a>
+                    </div>
+                    <div class="info">
+                        <img src="images/svg/at.svg" alt="Email">
+                        <a href="mailto:jean-francois@sarl.com">jean-francois@sarl.com</a>
+                    </div>
+                    <div class="info">
+                        <img src="images/svg/internet.svg" alt="Site web">
+                        <a href="#">www.le-site.pro</a>
+                    </div>
+                    <div class="info">
+                        <p class="label">SIRET</p>
+                        <p class="num">83164433100017</p>
+                    </div>
+                    <div class="info">
+                        <p class="label">Inscrit le</p>
+                        <p class="num">14 juillet 2018</p>
+                    </div>
+                </div>
+                <div class="block-pro dispo">
+                    <p class="title">Infos pratique</p>
+                    <div class="description">
+                        <div class="info">
+                            <img src="images/svg/calendar.svg" alt="Email">
+                            <p class="num">Lundi - samedi / 9h - 22h</p>
+                        </div>
+                        <div class="info">
+                            <img src="images/svg/credit-card.svg" alt="Email">
+                            <p class="num">CB / Cheques / Virement</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-pro rdv">
+                    <p class="title">Agenda</p>
+                    <div class="description">
+                        <div class="info">
+                            <p class="num">A venir</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="profil-ctn">
+                <div class="block-pro desc">
+                    <p class="title">Description</p>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quas quia deserunt tempora qui. Neque sunt mollitia tempora, enim, numquam veritatis architecto dolorem consequuntur consequatur in cupiditate recusandae labore modi!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus labore vero asperiores nobis commodi, explicabo corrupti cumque fugit harum odio maxime voluptas nesciunt atque exercitationem laborum iure dolore, quasi itaque!</p>
+                    </div>
+                </div>
+                <div class="block-pro prest">
+                    <p class="title">Prestations</p>
+                    <div class="presta">
+                        <p class="p-name">Debouchage de chiottes</p>
+                        <p class="price">390<span>€</span></p>
+                    </div>
+                    <div class="presta">
+                        <p class="p-name">Debouchage de chiottes et de papier qui pu</p>
+                        <p class="price">30<span>€</span></p>
+                    </div>
+                    <div class="presta">
+                        <p class="p-name">Debouchage de chiottes ou de papier qui pu ou meme qui ne pu pas on sen fout tu vois ce que je veux dire</p>
+                        <p class="price">Devis</p>
+                    </div>
+                </div>
+                <div class="block-pro com">
+                    <p class="title">Commentaires</p>
+                    <div class="comment">
+                        <div class="comment-head">
+                            <p class="com-name">Maxime Joyes</p>
+                            <div class="stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                        </div>
+                        <div class="date">
+                            <p>18/07/18</p>
+                        </div>
+                        <div class="comment-ctn">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae incidunt nobis necessitatibus voluptatibus nulla vero sapiente dignissimos iste quibusdam sed! Consequuntur quos labore dolores, ipsam ex non molestiae autem sunt.</p>
+                        </div>
+                    </div>
+                    <div class="comment-form">
+                        <form>
+                            <fieldset>
+                                <legend>Laisser un commentaire</legend>
+                                <div class="form-group">
+                                    <label>Note</label>
+                                    <span class="star-cb-group">
+                                    <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+                                    <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+                                    <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+                                    <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+                                    <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+                                    <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+                                    </span>
+                                </div>
+                                <div class="form-group sp">
+                                    <label for="name3">Nom</label>
+                                    <input type="text" name="name3" id="name3" required>
+                                </div>
+                                <div class="form-group sp">
+                                    <label for="mail3">Email</label>
+                                    <input type="mail" name="mail3" id="mail3" required>
+                                </div>
+                                <label for="message3">Commentaire</label>
+                                <textarea name="message3" id="message3" cols="10" rows="2" required></textarea>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-elems">
+                <div class="links">
+                    <a href="http://">Accueil</a>
+                    <a href="http://">Se connecter</a>
+                    <a href="http://">S'inscrire</a>
+                    <a href="http://">Actualites</a>
+                    <a href="http://">Activites</a>
+                    <a href="http://">Recherche specifique</a>
+                </div>
+                <div class="logo-footer">
+                    <p>1001Services</p>
+                </div>
+                <div class="contact">
+                    <a href="#">Nous contacter</a>
+                    <p>Coordonnees 1</p>
+                    <p>Coordonnees 1</p>
+                    <p>Coordonnees 1</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2018 1001Services All&nbsp;rights&nbsp;reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<!--build:js js/main.min.js -->
+<script src="js/main.js"></script>
+<!-- endbuild -->
+</html>

@@ -10,6 +10,8 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+        opacity: 1;
+        transition: opacity 1s ease-out;
     }
     .hero-wrapper{
         padding-top: rem(100);
@@ -67,62 +69,97 @@
             }
         }
     }
-    #navigation{
-        height: rem(70);
-        background-color: transparent;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        line-height: rem(70);
-        transition: 0.4s;
-        .brand{
-            z-index: 90;
-            h1{
-                font-size: em(20);
-                color: $white;
-                font-weight: $fw-bold;
-            }
+}
+#navigation{
+    height: rem(70);
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    line-height: rem(70);
+    transition: 0.4s;
+    .brand{
+        z-index: 90;
+        h1{
+            font-size: em(20);
+            color: $white;
+            font-weight: $fw-bold;
         }
-        .toggle{
-            display: block;
+    }
+    .toggle{
+        display: block;
+        width: rem(24);
+        height: rem(4);
+        background-color: $white;
+        border-radius: 1px;
+        z-index: 200;
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
             width: rem(24);
             height: rem(4);
             background-color: $white;
-            border-radius: 1px;
-            z-index: 200;
-            &::before,
+            transition: all 0.2s linear;
+        }
+        &::after{
+            margin-top: 7px;
+        }
+        &::before{
+            margin-top: -7px;
+        }
+        &.close{
+            background-color: transparent;
+            transition-delay: all 0.2s linear;
             &::after{
-                    content: '';
-                    position: absolute;
-                    width: rem(24);
-                    height: rem(4);
-                    background-color: $white;
-                    transition: all 0.2s linear;
-                }
-            &::after{
-                margin-top: 7px;
+                margin: 0;
+                transform: rotateZ(45deg);
             }
             &::before{
-                margin-top: -7px;
+                transform: rotateZ(-45deg);
+                margin: 0;
+            }
+        }
+    }
+    .desktop-menu{
+        display: none;
+    }
+    &.white{
+        background-color: $white;
+        border-bottom: 1px solid #efefef;
+        .brand{
+            h1{
+                color: $blue1;
+            }
+        }
+        .desktop-menu{
+            a{
+                color: $blue1;
+            }
+        }
+        .toggle{
+            background-color: $blue1;
+            &::before,
+            &::after{
+                background-color: $blue1;
             }
             &.close{
                 background-color: transparent;
                 transition-delay: all 0.2s linear;
                 &::after{
                     margin: 0;
+                    background-color: $white;
                     transform: rotateZ(45deg);
                 }
                 &::before{
                     transform: rotateZ(-45deg);
+                    background-color: $white;
                     margin: 0;
                 }
             }
-        }
-        .desktop-menu{
-            display: none;
         }
     }
 }

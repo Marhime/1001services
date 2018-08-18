@@ -134,13 +134,45 @@
     .separator{
         width: 150%;
     }
-    #sign-up{
+    .form-ctn{
         .sign-up-container{
             width: 80%;
+            align-self: center;
             .tt-01{
                 padding-top: 0;
             }
         }
     }
-    
+    #categories{
+        .cat{
+            .cats{
+                .cat-list{
+                    .list-item{
+                        width: 32%;
+                    }
+                }
+            }
+        }
+    }
+    .modal {
+        display: none; /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        .modal-container{
+            background-color: $white;
+            border-radius: 4px;
+            width: 90%;
+            height: 90%;
+        }
+    }
+    .error-page{
+        .cloud{
+            &.third{
+                bottom: rem(50);
+                left: 10%;
+            }
+        }
+    }
 }

@@ -1,0 +1,49 @@
+#categories{
+    .cat{
+        max-width: rem(950);
+        margin: 0 auto rem(50) auto;
+        .hr{
+            width: rem(90);
+            height: rem(4);
+            background-color: $blue1;
+        }
+        .tt-02{
+            text-transform: capitalize;
+            font-size: em(28);
+            margin-top: rem(25);
+            margin-bottom: rem(15);
+            line-height: 1.15;
+            font-weight: $fw-reg;
+            text-align: left;
+        }
+        .cats{
+            margin-top: rem(30);
+            .cat-list{
+                padding: 0;
+                list-style-type: none;
+                overflow: hidden;
+                .list-item{
+                    display: inline-block;
+                    margin-bottom: rem(14);
+                    padding-left: rem(20);
+                    width: 100%;
+                    font-size: em(18);
+                    word-break: break-all;
+                }
+            }
+        }
+        &:nth-last-of-type(odd){
+            .hr{
+                margin-left: auto;
+                background-color: #3bd800;
+            }
+            .tt-02{
+                text-align: right;
+            }
+            .list-item{
+                text-align: right;
+                padding-right: rem(20);
+            }
+        }
+    }
+}

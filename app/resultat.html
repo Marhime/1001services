@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html  lang="fr" class="no-js"> <![endif]-->
+<html  lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+    <title>1001 Services | Page d'acceuil</title>
+</head>
+<body>
+    <div id="loader-wrapper">
+        <img id="loader" src="images/svg/rocket-loader.svg" alt="" srcset="">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <header class="hero-header">
+        <div id="navigation" class="wrapper">
+            <a href="index.html" class="brand">
+                    <h1>1001Services</h1>
+            </a>
+            <div class="toggle"></div>
+            <nav class="desktop-menu">
+                <ul class="lm-desktop">
+                    <li><a href="connexion.html">Se connecter</a></li>
+                    <li><a href="inscription.html">S'inscrire comme pro</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img class="hero-media" name="slide" src="images/hero-01-large.jpg">
+        <div class="shadow dark"></div>
+        <div class="hero-wrapper container">
+            <h2>Que recherchez vous&nbsp;?</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, suscipit numquam. Quo error doloremque dolorem necess itatibus quero maniba.</p>
+            <form action="" id="search" method="post">
+                <div class="form-group">
+                    <select name="category" class="form-select" id="form-select-cat">
+                        <option value="Plombier">Je recherche</option>
+                        <option value="Plombier">Plombier</option>
+                        <option value="Dentiste">Dentiste</option>
+                        <option value="Cardiologue">Cardiologue</option>
+                        <option value="Vitrier">Vitrier</option>
+                        <option value="Electricien">Electricien</option>
+                        <option value="Garagiste">Garagiste</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="search" name="place" placeholder="Où ? (Adresse, ville ...)" id="input-search" class="input-search">
+                </div>
+                <input type="submit" class="btn-01" value="Recherchez">
+            </form>
+            <div class="search-more">
+                <a href="#">Vous ne trouvez pas&nbsp;?</a>
+            </div>
+        </div>
+    <div class="mobile-menu">
+        <ul class="lm-mobile">
+            <li><a href="connexion.html">Se connecter</a></li>
+            <li><a href="inscription.html">S'inscrire comme Pro</a></li>
+        </ul>
+    </div>
+    </header>
+    <main>
+        <section id="results" class="white">
+            <div id="map-container" class="container">
+                <h2 class="tt-02">XXX resultats pour {{recherche}} - {{ville}}</h2>
+                <div class="result-map">
+                    <div class="results-ctn">
+                        <div class="card-result">
+                            <div class="card-head">
+                                <p class="name">Jean-Francois SARL <span class="locate">500 m</span></p>
+                                <img class="avatar" src="images/jonh-doe.jpg" alt="Avatar">
+                            </div>
+                            <div class="card-ctn">
+                                <p class="resume">Plombier</p>
+                                <p class="status">Pro</p>
+                                <div class="address">
+                                    <img src="images/svg/maps-and-flags.svg" alt="Adresse">
+                                    <p>Paris - 75012</p>
+                                </div>
+                                <div class="phone">
+                                    <img src="images/svg/phone-receiver.svg" alt="Telephone">
+                                    <a href="tel:+0633437721">06 33 43 77 21</a>
+                                </div>
+                                <div class="mail">
+                                    <img src="images/svg/at.svg" alt="Email">
+                                    <a href="mailto:jean-francois@sarl.com">jean-francois@sarl.com</a>
+                                </div>
+                            </div>
+                            <div class="btn-more">
+                                <a href="profil.html" class="btn-01">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="card-result">
+                            <div class="card-head">
+                                <p class="name">Patrick Auto SARL <span class="locate">1100 m</span></p>
+                                <img class="avatar" src="images/jonh-doe.jpg" alt="Avatar">
+                            </div>
+                            <div class="card-ctn">
+                                <p class="resume">Garagiste</p>
+                                <p class="status">Pro</p>
+                                <div class="address">
+                                    <img src="images/svg/maps-and-flags.svg" alt="Adresse">
+                                    <p>Aubervilliers - 93200</p>
+                                </div>
+                                <div class="phone">
+                                    <img src="images/svg/phone-receiver.svg" alt="Telephone">
+                                    <a href="tel:+0633437721">01 22 43 54 19</a>
+                                </div>
+                                <div class="mail">
+                                    <img src="images/svg/at.svg" alt="Email">
+                                    <a href="mailto:jean-francois@sarl.com">patrick-auto@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="btn-more">
+                                <a href="profil.html" class="btn-01">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="card-result">
+                            <div class="card-head">
+                                <p class="name">Jean-Francois SARL <span class="locate">500 m</span></p>
+                                <img class="avatar" src="images/jonh-doe.jpg" alt="Avatar">
+                            </div>
+                            <div class="card-ctn">
+                                <p class="resume">Electricien</p>
+                                <p class="status">Pro</p>
+                                <div class="address">
+                                    <img src="images/svg/maps-and-flags.svg" alt="Adresse">
+                                    <p>Paris - 75012</p>
+                                </div>
+                                <div class="phone">
+                                    <img src="images/svg/phone-receiver.svg" alt="Telephone">
+                                    <a href="tel:+0633437721">06 33 43 77 21</a>
+                                </div>
+                                <div class="mail">
+                                    <img src="images/svg/at.svg" alt="Email">
+                                    <a href="mailto:jean-francois@sarl.com">jean-francois@sarl.com</a>
+                                </div>
+                            </div>
+                            <div class="btn-more">
+                                <a href="profil.html" class="btn-01">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="card-result">
+                            <div class="card-head">
+                                <p class="name">Jean-Francois SARL <span class="locate">500 m</span></p>
+                                <img class="avatar" src="images/jonh-doe.jpg" alt="Avatar">
+                            </div>
+                            <div class="card-ctn">
+                                <p class="resume">Dentiste</p>
+                                <p class="status">Pro</p>
+                                <div class="address">
+                                    <img src="images/svg/maps-and-flags.svg" alt="Adresse">
+                                    <p>Paris - 75012</p>
+                                </div>
+                                <div class="phone">
+                                    <img src="images/svg/phone-receiver.svg" alt="Telephone">
+                                    <a href="tel:+0633437721">06 33 43 77 21</a>
+                                </div>
+                                <div class="mail">
+                                    <img src="images/svg/at.svg" alt="Email">
+                                    <a href="mailto:jean-francois@sarl.com">jean-francois@sarl.com</a>
+                                </div>
+                            </div>
+                            <div class="btn-more">
+                                <a href="profil.html" class="btn-01">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="card-result">
+                            <div class="card-head">
+                                <p class="name">Thierry HEN <span class="locate">500 m</span></p>
+                                <img class="avatar" src="images/jonh-doe.jpg" alt="Avatar">
+                            </div>
+                            <div class="card-ctn">
+                                <p class="resume">Orthopediste</p>
+                                <p class="status">Noob</p>
+                                <div class="address">
+                                    <img src="images/svg/maps-and-flags.svg" alt="Adresse">
+                                    <p>Limoges - 44000</p>
+                                </div>
+                                <div class="phone">
+                                    <img src="images/svg/phone-receiver.svg" alt="Telephone">
+                                    <a href="tel:+0633437721">06 33 43 77 21</a>
+                                </div>
+                                <div class="mail">
+                                    <img src="images/svg/at.svg" alt="Email">
+                                    <a href="mailto:jean-francois@sarl.com">jean-francois@sarl.com</a>
+                                </div>
+                            </div>
+                            <div class="btn-more">
+                                <a href="profil.html" class="btn-01">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="map">
+                        <div class="map-abs">
+                            <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41999.460287025104!2d2.3119548203158815!3d48.85885362149412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1534293923294" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-elems">
+                <div class="links">
+                    <a href="http://">Accueil</a>
+                    <a href="http://">Se connecter</a>
+                    <a href="http://">S'inscrire</a>
+                    <a href="http://">Actualites</a>
+                    <a href="http://">Activites</a>
+                    <a href="http://">Recherche specifique</a>
+                </div>
+                <div class="logo-footer">
+                    <p>1001Services</p>
+                </div>
+                <div class="contact">
+                    <a href="#">Nous contacter</a>
+                    <p>Coordonnees 1</p>
+                    <p>Coordonnees 1</p>
+                    <p>Coordonnees 1</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2018 1001Services All&nbsp;rights&nbsp;reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<!--build:js js/main.min.js -->
+<script src="js/sticky-map.js"></script>
+<script src="js/main.js"></script>
+<!-- endbuild -->
+</html>

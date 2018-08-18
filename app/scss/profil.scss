@@ -1,0 +1,242 @@
+#profil-page{
+    padding: rem(90) 0 rem(30) 0;
+    background-color: $light;
+    .infos,
+    .block-pro{
+        background-color: $white;
+        box-shadow: 2px 3px 5px 0px rgba($dark, 0.2);
+        border-radius: 4px;
+        padding: rem(20);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(20);
+        .surname-i,
+        .name-i{
+            word-break: break-all;
+            text-align: center;
+            font-size: em(24);
+        }
+        .name-i{
+            font-weight: $fw-sb;
+            text-transform: uppercase;
+        }
+        .title{
+            color: $blue1;
+            font-weight: $fw-bold;
+            text-align: left;
+            margin-bottom: rem(20);
+        }
+        .avatar{
+            width: rem(80);
+            height: rem(80);
+            border-radius: 50%;
+            display: block;
+            margin: rem(20) auto rem(20) auto;
+        }
+        .name{
+            font-weight: $fw-bold;
+            text-align: left;
+            margin-bottom: rem(10);
+            display: flex;
+            justify-content: space-between;
+            .locate{
+                color: $blue1;
+                display: inline-block;
+            }
+        }
+        .resume{
+            margin-bottom: rem(10);
+            align-self: center;
+        }
+        .status{
+            font-weight: $fw-bold;
+            color: $blue1;
+            align-self: center;
+        }
+        .cta{
+            display: flex;
+            justify-content: space-between;
+            margin: rem(20) 0;
+            a{
+                width: calc(50% - 5px);
+            }
+        }
+        .info{
+            display: flex;
+            margin-bottom: rem(10);
+            img{
+                display: block;
+                width: rem(20);
+                height: rem(20);
+                margin-right: rem(20);
+            }
+            p,
+            a{
+                line-height: 1.3;
+                word-break: break-all;
+            }
+            a{
+                color: $dark;
+            }
+            &:first-child{
+                margin-top: rem(10);
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .label{
+            color: $blue1;
+            font-weight: 600;
+            display: block;
+            margin-right: rem(20);
+        }
+    }
+    .profil-ctn{
+        .description{
+            p{
+                margin-bottom: rem(10);
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .prest{
+            .presta{
+                display: flex;
+                width: 100%;
+                margin-bottom: rem(20);
+                .p-name{
+                    display: flex;
+                    width: 80%;
+                    align-items: center;
+                }
+                .price{
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    width: 20%;
+                    font-size: em(18);
+                    color: $blue1;
+                    font-weight: $fw-sb;
+                    span{
+                        display: inline-block;
+                        font-weight: $fw-reg;
+                        font-size: em(12);
+                    }
+                }
+            }
+        }
+    }
+    .com{
+        $unchecked-star: '\2606';
+        $unchecked-color: $grey;
+        $checked-star: '\2605';
+        $checked-color: #70b7e5;
+        outline: none;
+
+        .star-cb-group {
+        margin-left: rem(10);
+        font-size: 0;
+        * {
+            font-size: 1rem;
+        }
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        & > input {
+            display: none;
+            & + label {
+            display: inline-block;
+            overflow: hidden;
+            text-indent: 9999px;
+            width: 1em;
+            white-space: nowrap;
+            cursor: pointer;
+            &:before {
+                display: inline-block;
+                text-indent: -9999px;
+                content: $unchecked-star;
+                color: $unchecked-color;
+            }
+            }
+            &:checked ~ label:before,
+            & + label:hover ~ label:before,
+            & + label:hover:before {
+            content: $checked-star;
+            color: #70b7e5;
+            text-shadow: 0 0 1px #333;
+            }
+        }
+        
+        & > .star-cb-clear + label {
+            text-indent: -9999px;
+            width: .5em;
+            margin-left: -.5em;
+        }
+        & > .star-cb-clear + label:before {
+            width: .5em;
+        }
+
+        &:hover > input + label:before {
+            content: $unchecked-star;
+            color: $unchecked-color;
+            text-shadow: none;
+        }
+        &:hover > input + label:hover ~ label:before,
+        &:hover > input + label:hover:before {
+            content: $checked-star;
+            color: $checked-color;
+            text-shadow: 0 0 1px #70b7e5;
+        }
+        }
+
+        legend{
+            color: $white;
+            padding: rem(5);
+            background-color: #70b7e5;
+            border-radius: 4px;
+            margin-bottom: rem(10);
+            width: 100%;
+            text-align: center;
+        }
+        .comment{
+            padding: 2px;
+            margin-bottom: rem(20);
+            .comment-head{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: rem(5);
+                .com-name{
+                    font-weight: $fw-bold;
+                }
+                .stars{
+                    span{
+                        color: $blue1;
+                    }
+                }
+            }
+            .date{
+                font-size: em(12);
+                text-transform: uppercase;
+                color: $blue1;
+                margin-bottom: rem(10);
+                font-weight: $fw-bold;
+            }
+        }
+        .comment-form{
+            margin-top: rem(20);
+            .form-group{
+                display: flex;
+                align-items: center;
+                margin-bottom: rem(10);
+                &.sp{
+                    justify-content: space-between;
+                }
+                input{
+                    width: 80%;
+                    padding: rem(5);
+                }
+            }
+        }
+    }
+}
