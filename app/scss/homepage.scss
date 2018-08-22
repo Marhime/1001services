@@ -1,4 +1,5 @@
 #how{
+    padding-bottom: 0;
     .howit{
        .block{
            text-align: center;
@@ -7,24 +8,25 @@
                height: rem(160);
                display: block;
                margin: 0 auto;
-               padding: rem(20) 0;
+               padding-bottom: rem(20);
            }
-           p{
-               margin-bottom: rem(20);
+           .block-t{
+               margin-bottom: rem(30);
            }
         }
     }
 }
 #activities{
+    padding-top: rem(80);
     .act-container{
         margin-bottom: rem(50);
-        .full-width-act{
+        .full-width-act,
+        .half-width-act{
             .block-act{
                 position: relative;
                 width: 100%;
                 height: 320px;
                 overflow: hidden;
-                background-color: aqua;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -56,48 +58,10 @@
                     font-size: em(28);
                     font-weight: $fw-reg;
                     transition: 0.4s;
+                    z-index: 6;
                 }
             }
         }
-        .half-width-act{
-            .block-act{
-                position: relative;
-                width: 100%;
-                height: 320px;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                .background{
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: 0.4s;
-                }
-                .picto{
-                    position: absolute;
-                    width: rem(60);
-                    height: rem(60);
-                    top: 50%;
-                    right: 50%;
-                    transform: translate(50%, -60%);
-                    z-index: 5;
-                }
-                p{
-                    position: absolute;
-                    top: 50%;
-                    right: 50%;
-                    transform: translate(50%, 120%);
-                    color: $white;
-                    font-size: em(28);
-                    font-weight: $fw-reg;
-                }
-            }
-        }
-
     }
 }
 #news{
@@ -142,6 +106,7 @@
     }
 }
 #last-users{
+    padding-top: rem(130);
     .last-users{
         .block-last-user{
             color: $dark;
@@ -168,6 +133,7 @@
     }
 }
 #testimonials{
+    padding-bottom: rem(10);
     .users-testimonials{
         .block-testi{
             position: relative;
@@ -177,6 +143,10 @@
             box-shadow: 0px 0px 30px -6px rgba(194,194,194,1);
             margin-bottom: rem(30);
             padding: rem(20);
+            background-color: $white;
+            &:last-child{
+                margin-bottom: 0;
+            }
         }
         .quote{
             display: block;

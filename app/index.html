@@ -20,6 +20,12 @@
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
+    <div id="cookies">
+        <p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site. <a href="cookies.html">En&nbsp;savoir&nbsp;plus</a></p>
+        <div class="accept">
+            <a class="btn-01">OK</a>
+        </div>
+    </div>
     <header class="hero-header">
         <div id="navigation" class="wrapper">
             <a href="index.html" class="brand">
@@ -28,18 +34,16 @@
             <div class="toggle"></div>
             <nav class="desktop-menu">
                 <ul class="lm-desktop">
-                    <li><a onclick="document.getElementById('login-modal').style.display='flex'">Se connecter</a></li>
-                    <li><a onclick="document.getElementById('signup-modal').style.display='flex'">S'inscrire comme pro</a></li>
+                    <li><a class="open-modal" data-modal="login-modal">Se connecter</a></li>
+                    <li><a class="open-modal" data-modal="signup-modal">S'inscrire comme pro</a></li>
                 </ul>
             </nav>
         </div>
-        <!-- <img class="hero-media" name="slide" src="images/hero-01-large.jpg"
-                srcset="images/hero-01-mobile.jpg 320w,
-                images/hero-01-tablet.jpg 768w"
-                sizes="100vw"
-                alt=""> -->
-        <img class="hero-media" name="slide" alt="">
-        <img class="hero-media" name="slide1" alt="">
+        <div id="slideshow">   
+            <img class="hero-media" src="images/hero-01-large.jpg" alt="Hero 1">
+            <img class="hero-media" src="images/hero-02-large.jpg" alt="Hero 2">
+            <img class="hero-media" src="images/hero-03-large.jpg" alt="Hero 3">
+        </div>
         <div class="shadow dark"></div>
         <div class="hero-wrapper container">
             <h2>Que recherchez vous&nbsp;?</h2>
@@ -62,13 +66,13 @@
                 <input type="submit" class="btn-01" value="Recherchez">
             </form>
             <div class="search-more">
-                <a onclick="document.getElementById('cantfind-modal').style.display='flex'">Vous ne trouvez pas&nbsp;?</a>
+                <a class="open-modal" data-modal="cantfind-modal">Vous ne trouvez pas&nbsp;?</a>
             </div>
         </div>
     <div class="mobile-menu">
         <ul class="lm-mobile">
-            <li><a onclick="document.getElementById('login-modal').style.display='flex'">Se connecter</a></li>
-            <li><a onclick="document.getElementById('signup-modal').style.display='flex'">S'inscrire comme Pro</a></li>
+            <li><a class="open-modal" data-modal="login-modal">Se connecter</a></li>
+            <li><a class="open-modal" data-modal="signup-modal">S'inscrire comme pro</a></li>
         </ul>
     </div>
     <div id="login-modal" class="modal">
@@ -77,11 +81,11 @@
             </aside>
             <div class="form-ctn">
                 <header id="logo-header" class="wrapper">
-                    <a onclick="document.getElementById('login-modal').style.display='none'"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
+                    <a class="close-modal"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
                     <a class="logo-sign" href="index.html">1001Services</a>
                 </header>
-                <div class="close-ctn">
-                    <div onclick="document.getElementById('login-modal').style.display='none'" class="close"></div>
+                <div class="close-ctn left">
+                    <div class="close close-modal"></div>
                 </div>
                 <div class="sign-up-container">
                     <h1 class="tt-01">Connexion</h1>
@@ -89,11 +93,11 @@
                         <label for="email">Adresse mail</label>
                         <input type="email" name="email" id="email">
                         <label for="mdp">Mot de passe</label>
-                        <input type="password" name="mdp" id="phone">
+                        <input type="password" name="mdp" id="password">
                         <input class="btn-01" type="submit" value="Se connecter">
                     </form>
                     <p class="sign-in"><a href="password.html">Mot de passe oublie?</a></p>
-                    <p class="sign-in">Pas encore de compte? <a onclick="document.getElementById('login-modal').style.display='none'; document.getElementById('signup-modal').style.display='flex'">S'inscrire</a></p>
+                    <p class="sign-in">Pas encore de compte? <a class="open-modal" data-modal="signup-modal">S'inscrire</a></p>
                 </div>
             </div>
         </div>
@@ -104,11 +108,11 @@
             </aside>
             <div class="form-ctn">
                 <header id="logo-header" class="wrapper">
-                    <a onclick="document.getElementById('signup-modal').style.display='none'"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
+                    <a class="close-modal"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
                     <a class="logo-sign" href="index.html">1001Services</a>
                 </header>
-                <div class="close-ctn">
-                    <div onclick="document.getElementById('signup-modal').style.display='none'" class="close"></div>
+                <div class="close-ctn right">
+                    <div class="close close-modal"></div>
                 </div>
                 <div class="sign-up-container">
                     <h1 class="tt-01">Demande d'inscription</h1>
@@ -123,13 +127,13 @@
                         <input type="text" name="name" id="name" required>
                         <label for="nickname">Prenom <span>*</span></label>
                         <input type="text" name="nickname" id="nickname" required>
-                        <label for="email">Adresse mail <span>*</span></label>
-                        <input type="email" name="email" id="email" required>
+                        <label for="email1">Adresse mail <span>*</span></label>
+                        <input type="email" name="email1" id="email1" required>
                         <label for="phone">Telephone <span>*</span></label>
                         <input type="tel" name="phone" id="phone" required>
                         <input class="btn-01" type="submit" value="S'inscrire">
                     </form>
-                    <p class="sign-in">Vous avez deja un compte? <a onclick="document.getElementById('signup-modal').style.display='none'; document.getElementById('login-modal').style.display='flex'">Se connecter</a></p>
+                    <p class="sign-in">Vous avez deja un compte? <a class="open-modal" data-modal="login-modal">Se connecter</a></p>
                 </div>
             </div>
         </div>
@@ -140,18 +144,18 @@
             </aside>
             <div class="form-ctn">
                 <header id="logo-header" class="wrapper">
-                    <a onclick="document.getElementById('cantfind-modal').style.display='none'"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
+                    <a class="close-modal"><img class="return" src="images/svg/left-arrow.svg" alt="" srcset=""></a>
                     <a class="logo-sign" href="index.html">1001Services</a>
                 </header>
-                <div class="close-ctn">
-                    <div onclick="document.getElementById('cantfind-modal').style.display='none'" class="close"></div>
+                <div class="close-ctn right">
+                    <div class="close close-modal"></div>
                 </div>
                 <div class="sign-up-container">
                     <h1 class="tt-01">Vous ne trouvez pas ?</h1>
                     <p class="mandatory">Champs obligatoires *</p>
                     <form action="">
-                        <label for="email">Adresse mail <span>*</span></label>
-                        <input type="email" name="email" id="email" required>
+                        <label for="email2">Adresse mail <span>*</span></label>
+                        <input type="email" name="email2" id="email2" required>
                         <label for="subject">Sujet <span>*</span></label>
                         <input type="text" name="subject" id="subject" required>
                         <label for="message">Message <span>*</span></label>
@@ -164,29 +168,32 @@
     </div>
     </header>
     <main>
-        <section id="how" class="light">
+        <section id="how" class="white">
             <div class="container">
                 <h2 class="tt-01">Comment ca marche&nbsp;?</h2>
                 <div class="howit">
                     <div class="block">
                         <img src="images/target.svg" alt="">
                         <p class="tt-02">1. Ciblez votre<br>besoin</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel provident sit, dolores aperiam dignissimos sunt, natus molestiae eius nostrum autem ipsa qui, officia quas. Corrupti at ducimus culpa nisi debitis!</p>
+                        <p class="block-t">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel provident sit, dolores aperiam dignissimos sunt, natus molestiae eius nostrum autem ipsa qui, officia quas. Corrupti at ducimus culpa nisi debitis!</p>
                     </div>
                     <div class="block">
                         <img src="images/rocket.svg" alt="">
                         <p class="tt-02">2. Trouvez votre<br>specialiste</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel provident sit, dolores aperiam dignissimos sunt, natus molestiae eius nostrum autem ipsa qui, officia quas. Corrupti at ducimus culpa nisi debitis!</p>
+                        <p class="block-t">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel provident sit, dolores aperiam dignissimos sunt, natus molestiae eius nostrum autem ipsa qui, officia quas. Corrupti at ducimus culpa nisi debitis!</p>
                     </div>
                     <div class="block">
                         <img src="images/partner.svg" alt="">
                         <p class="tt-02">3. Prenez contact<br>&nbsp;</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel provident sit, dolores aperiam dignissimos sunt, natus molestiae eius nostrum autem ipsa qui, officia quas. Corrupti at ducimus culpa nisi debitis!</p>
+                        <p class="block-t">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel provident sit, dolores aperiam dignissimos sunt, natus molestiae eius nostrum autem ipsa qui, officia quas. Corrupti at ducimus culpa nisi debitis!</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="activities" class="white">
+        <section id="activities" class="light">
+            <svg id="bigTriangleColor" class="separator top white" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="50" viewBox="0 0 100 102" preserveAspectRatio="none">
+                <path d="M0 0 L50 100 L100 0 Z" />
+            </svg>
             <h2 class="tt-01">Toutes nos activites</h2>
             <div class="act-container">
                 <div class="full-width-act">
@@ -226,11 +233,8 @@
                 </a>
             </div>
         </section>
-        <section id="news" class="light">
-            <!-- <svg class="separator white" id="bigTriangleColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none">
-                <path d="M0 0 L50 100 L100 0 Z" />
-            </svg>  -->
-            <svg class="separator right white" id="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <section id="news" class="white">
+            <!-- <svg class="separator bottom white clouds" id="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path d="M-5 100 Q 0 20 5 100 Z
                         M0 100 Q 5 0 10 100
                         M5 100 Q 10 30 15 100
@@ -252,7 +256,8 @@
                         M85 100 Q 90 50 95 100
                         M90 100 Q 95 25 100 100
                         M95 100 Q 100 15 105 100 Z"></path>
-            </svg>                                              
+            </svg>                                            -->
+
             <h2 class="tt-01">Les dernieres actualites</h2>
             <div class="news">
                 <a href="article.html" class="article">
@@ -286,7 +291,7 @@
                 </a>
             </div>
         </section>
-        <section id="testimonials" class="white">
+        <section id="testimonials" class="light">
             <div class="container">
                 <h2 class="tt-01">Les temoignages</h2>
                 <div class="users-testimonials">
@@ -313,8 +318,12 @@
                     </div>
                 </div>
             </div>
+            
         </section>
-        <section id="last-users" class="light">
+        <section id="last-users" class="white">
+            <svg id="curveDownColor" class="separator top light" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 0 C 50 100 80 100 100 0 Z" />
+            </svg>
             <div class="container">
                 <h2 class="tt-01">Les derniers inscrits</h2>
                 <div class="last-users">
@@ -334,19 +343,19 @@
                         <p>Coach de vie</p>
                     </a>
                 </div>
-            </div>
+            </div>                  
         </section>
     </main>
     <footer id="footer">
         <div class="container">
             <div class="footer-elems">
                 <div class="links">
-                    <a href="http://">Accueil</a>
-                    <a href="http://">Se connecter</a>
-                    <a href="http://">S'inscrire</a>
-                    <a href="http://">Actualites</a>
-                    <a href="http://">Activites</a>
-                    <a href="http://">Recherche specifique</a>
+                    <a href="index.html">Accueil</a>
+                    <a class="open-modal" data-modal="login-modal">Se connecter</a>
+                    <a class="open-modal" data-modal="signup-modal">S'inscrire</a>
+                    <a href="articles-list.html">Actualites</a>
+                    <a href="categories.html">Activites</a>
+                    <a class="open-modal" data-modal="cantfind-modal">Recherche specifique</a>
                 </div>
                 <div class="logo-footer">
                     <p>1001Services</p>

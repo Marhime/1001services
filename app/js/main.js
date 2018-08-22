@@ -32,6 +32,7 @@ document.addEventListener('click', function(e){
     $menu.classList.remove('active');
     $body.classList.remove('menu-open');
 });
+
 function stickyNav() {
     var menu = document.getElementById("navigation");
     if(menu){
@@ -42,52 +43,88 @@ function stickyNav() {
         }
     }
 };
+
 document.onscroll = function(){stickyNav()}
-document.addEventListener('DOMContentLoaded', function(event){
+
+// Functions onload
+
+function loader(){
     setTimeout(function(){
         document.querySelector('body').classList.add('loaded');
        }, 1000);
-})
+    }
 
-var i=0;
-var images=['../images/hero-01-large.jpg', '../images/hero-02-large.jpg', '../images/hero-03-large.jpg'];
-function changeImg(){
-    document.slide.style.opacity = 1;
-    document.slide.src=images[i];
-    if(i<images.length-1){
-        i++;
+function slideshow() {
+    var slideshow = document.getElementById("slideshow");
+    var fadeComplete = function(e) { slideshow.appendChild(arr[0]); };
+    if(slideshow){
+        var arr = slideshow.getElementsByTagName("img");
+        for(var i=0; i < arr.length; i++) {
+          arr[i].addEventListener("animationend", fadeComplete, false);
+        }
+    }
+}
+
+var accept_cookies = "",
+    acceptBtn = document.querySelector(".accept"),
+    cookies = document.getElementById("cookies");
+
+acceptBtn.onclick = function(){
+    localStorage.accept_cookies = 1;
+    cookies.style.height = 0;
+}
+
+function checkCookie() {
+    if(localStorage.accept_cookies){
+        cookies.style.display = 'none';
     }
     else{
-        i=0;
+        cookies.style.display = 'flex';
     }
-    setTimeout(function(){
-        changeImg();
-    }, 12000);
-    setTimeout(function(){
-        document.slide.style.opacity = 0.4;
-    }, 11200);
 }
-var placeholders=['Electricien', 'Coiffeur', 'Plombier', 'Architecte']
-window.onload=changeImg;
 
 
-// Get the modal
-var signup = document.getElementById('signup-modal'),
-    signin = document.getElementById('login-modal'),
-    cantFind = document.getElementById('cantfind-modal'),
-    modal = document.getElementsByClassName('modal')
+window.addEventListener("DOMContentLoaded", function(){loader(); slideshow(); checkCookie()}, false);
 
+
+// Get the modals
+var modals = document.querySelectorAll('.modal'),
+    l = modals.length;
+    
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == signup) {
-        signup.style.display = "none";
+    for (i = 0; i < l; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = 'none';
+            $body.style.overflow = 'auto';
+        }
     }
-    if (event.target == signin) {
-        signin.style.display = "none";
-    }
-    if (event.target == cantFind) {
-        cantFind.style.display = "none";
-    }
+}
 
+// Get the buttons
+var openBtn = document.getElementsByClassName("open-modal"),
+    closeBtn = document.getElementsByClassName('close-modal')
+
+// Open modal
+for (var i = 0; i < openBtn.length; i++) {
+  const thisBtn = openBtn[i];
+  thisBtn.addEventListener("click", function(){
+    for (i = 0; i < l; i++) {
+        modals[i].style.display = 'none';
+    }
+    var modal = document.getElementById(this.dataset.modal);
+    modal.style.display = "flex";
+    $body.style.overflow = "hidden";
+}, false)};
+
+// Close modal
+for (var i = 0; i < closeBtn.length; i++){
+    const thisBtn = closeBtn[i];
+    thisBtn.addEventListener("click", function(){
+        for (i = 0; i < l; i++) {
+            modals[i].style.display = 'none';
+            $body.style.overflow = "auto";
+        }
+    })
 }

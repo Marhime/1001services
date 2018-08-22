@@ -33,43 +33,50 @@
                 margin-top: rem(50);
             }
         }
-        #navigation{
-            .toggle{
-                display: none;
+    }
+    #navigation{
+        .toggle{
+            display: none;
+        }
+        .brand{
+            h1{
+                font-size: em(24);
             }
+        }
+        .desktop-menu{
+            display: block;
+            z-index: 90;
+            .lm-desktop{
+                display: flex;
+                a{
+                    padding-left: rem(25);
+                    display: block;
+                    color: $white;
+                    font-size: em(20);
+                    letter-spacing: 0.125px;
+                }
+            }
+        }
+        &.white{
+            .lm-desktop{
+                a{
+                    color: $dark;
+                }
+            }
+        }
+        &.fixed{
+            background-color: $white;
+            position: fixed;
+            z-index: 50;
+            border-bottom: 1px solid #efefef;
             .brand{
                 h1{
-                    font-size: em(24);
+                    color: $dark;
                 }
             }
             .desktop-menu{
-                display: block;
-                z-index: 90;
-                .lm-desktop{
-                    display: flex;
-                    a{
-                        padding-left: rem(25);
-                        display: block;
-                        color: $white;
-                        font-size: em(20);
-                        letter-spacing: 0.125px;
-                    }
-                }
-            }
-            &.fixed{
-                background-color: $white;
-                position: fixed;
-                z-index: 50;
-                border-bottom: 1px solid #efefef;
-                .brand{
-                    h1{
-                        color: $dark;
-                    }
-                }
-                .desktop-menu{
-                    a{
-                        color: $dark;
-                    }
+                a{
+                    color: $dark;
                 }
             }
         }
@@ -132,7 +139,9 @@
         }
     }
     .separator{
-        width: 150%;
+        &.clouds{
+            width: 150%;
+        }
     }
     .form-ctn{
         .sign-up-container{
@@ -172,6 +181,34 @@
             &.third{
                 bottom: rem(50);
                 left: 10%;
+            }
+        }
+    }
+    #profil-page{
+        .com{
+            .comment-form{
+                .form-group{
+                    input{
+                        width: 90%;
+                    }
+                }
+            }
+            .message-group{
+                textarea{
+                    width: 80%;
+                }
+
+            }
+        }
+    }
+    #profil-page{
+        .profil{
+            display: flex;
+            .infos-side{
+                flex: 1 1 35%;
+            }
+            .profil-ctn{
+                flex: 1 1 65%;
             }
         }
     }

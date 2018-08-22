@@ -40,8 +40,7 @@ canvas{
   margin: 0 auto;
 }
 section{
-  padding-bottom: rem(80);
-  padding-top: rem(30);
+  padding: rem(50) 0;
   position: relative;
   &.white{
     background-color: $white;
@@ -87,11 +86,11 @@ section{
   white-space: nowrap;
   cursor: pointer;
   font-family: $font;
+  -webkit-appearance: none;
   &:hover{
     background-color: #68abd6;
   }
   &.more{
-    margin-top: rem(50);
     width: rem(240);
   }
 }
@@ -107,6 +106,7 @@ section{
   height: 100%;
   width: 100%;
   transition: 0.2s;
+  z-index: 4;
   &.light{
     background-color: rgba($dark, $alpha: 0.3);
   }
@@ -116,13 +116,15 @@ section{
 }
 .separator{
   position: absolute;
-  width: 350%;
-  &.left{
+  width: 100%;
+  &.clouds{
+    width: 350%;
+  }
+  &.top{
     top: 0;
     left: 0;
-    transform: rotate(180deg);
   }
-  &.right{
+  &.bottom{
     bottom: 0;
     right: 0;
   }
@@ -140,6 +142,9 @@ section{
     path {
       fill: $light;
     }
+  }
+  &.rev{
+    transform: rotate(180deg);
   }
 }
 
@@ -160,6 +165,8 @@ textarea{
     padding-left: rem(10);
     position: relative;
     appearance: none;
+    -webkit-appearance: none;
+    font-family: $font;
 }
 select {
     -webkit-appearance: none;
@@ -172,6 +179,25 @@ select {
     background-repeat: no-repeat;
     cursor: pointer;
 }
+input[type="file"]{
+  border: none;
+  padding: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $placeholder;
+  opacity: 1; /* Firefox */
+  font-weight: $fw-sb;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $placeholder;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $placeholder;
+}
+
 .logo-sign{
   font-size: em(24);
   color: $white;
@@ -217,19 +243,30 @@ select {
   }
 }
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  animation-name: scale;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
   .modal-container{
     width: 100%;
     height: 100%;
     max-width: rem(930);
     max-height: rem(700);
+  }
+  @keyframes scale{
+    from { 
+      opacity: 0;
+    }
+    to {
+      opacity: 1.0;
+    }
   }
 }
 
