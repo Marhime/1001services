@@ -841,6 +841,11 @@ a {
     display: none; }
   .form-ctn .sign-up-container {
     padding: 0 0.9375rem 2.5rem 0.9375rem; }
+    .form-ctn .sign-up-container .error {
+      font-style: italic;
+      color: #E74C3C;
+      text-align: center;
+      padding-bottom: 1.875rem; }
     .form-ctn .sign-up-container .tt-01 {
       padding: 1.875rem 0;
       font-size: 1.625em; }

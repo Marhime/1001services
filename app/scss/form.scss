@@ -34,6 +34,12 @@
     }
     .sign-up-container{
         padding: rem(0) rem(15) rem(40) rem(15);
+        .error{
+            font-style: italic;
+            color: $red1;
+            text-align: center;
+            padding-bottom: rem(30);
+        }
         .tt-01{
             padding: rem(30) 0;
             font-size: em(26);

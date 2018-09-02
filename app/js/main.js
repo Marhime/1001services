@@ -128,3 +128,32 @@ for (var i = 0; i < closeBtn.length; i++){
         }
     })
 }
+
+var loginBtn = document.querySelector("#btn-login");
+var username = document.querySelector("#email");
+var password = document.querySelector("#password");
+var pError = document.querySelector("#l-error");
+
+loginBtn.onclick = function(event){
+    event.preventDefault();
+    // loading animation
+    var xhr = new XMLHttpRequest();
+    var data = "_username="+username.value+"&_password="+password.value;
+    xhr.open("POST", loginUrl, true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var reponse = JSON.parse(xhr.responseText);
+            if(reponse.status == "ok") {
+                // Login ok, redirect page to reponse.redirect_url
+                window.location = reponse.redirect_url;
+            } else {
+                // login error, display reponse.message
+                pError.innerHTML = reponse.message;
+                pError.classList.add('error');
+            }
+        }
+    };
+    xhr.send(data);
+    return false;
+};
