@@ -157,3 +157,36 @@ loginBtn.onclick = function(event){
     xhr.send(data);
     return false;
 };
+
+registerBtn.onclick = function(event){
+    event.preventDefault();
+
+    // loading animation
+    var xhr = new XMLHttpRequest();
+    var data = "_gender="+gender.value+"&_name="+name.value+"&_nickname="+nickname.value+"&_email="+email.value+"&_phone="+phone.value;
+    xhr.open("POST", 'wsh', true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // var reponse = JSON.parse(xhr.responseText);
+            if(reponse.code == '400') {
+                for (var key in response.errors) {
+                    if (response.errors.hasOwnProperty(key)) {
+                        document.querySelector('#'+key).style.backgroundColor = '#db51513d';
+                    }
+                }
+            } else {
+                for (i = 0; i < registerForm.length; i++) {
+                    if(registerForm[i].style.display == 'none'){
+                        registerForm[i].style.display = 'block';
+                    }
+                    else{
+                        registerForm[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    };
+    xhr.send(data);
+    return false;
+}

@@ -74,3 +74,17 @@
         }
     }
 }
+
+#password{
+    .mail-form{
+        input{
+            height: rem(48);
+            margin-bottom: rem(10);
+        }
+        label{
+            display: block;
+            margin-bottom: rem(10);
+            text-align: center;
+        }
+    }
+}

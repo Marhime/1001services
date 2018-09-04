@@ -115,10 +115,10 @@
                 <div class="close-ctn right">
                     <div class="close close-modal"></div>
                 </div>
-                <div class="sign-up-container">
+                <div class="sign-up-container" id="register-form">
                     <h1 class="tt-01">Demande d'inscription</h1>
                     <p class="mandatory">Champs obligatoires *</p>
-                    <form action="">
+                    <form action="" method="GET">
                         <label for="gender">Civilite <span>*</span></label>
                         <select name="gender" id="gender" required>
                             <option value="mme">Madame</option>
@@ -132,9 +132,10 @@
                         <input type="email" name="email1" id="email1" required>
                         <label for="phone">Telephone <span>*</span></label>
                         <input type="tel" name="phone" id="phone" required>
-                        <input class="btn-01" type="submit" value="S'inscrire">
+                        <input id="btn-register" class="btn-01" type="submit" value="S'inscrire">
                     </form>
                     <p class="sign-in">Vous avez deja un compte? <a class="open-modal" data-modal="login-modal">Se connecter</a></p>
+                    <p id="success" style="display: none;">Nous avons bien reçu votre demande</p>
                 </div>
             </div>
         </div>
