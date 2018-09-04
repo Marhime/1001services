@@ -810,6 +810,9 @@ a {
     font-weight: 700;
     padding-top: 0.625rem; }
 
+.pac-logo::after {
+  display: none; }
+
 .sign-side {
   display: none; }
 
@@ -1096,11 +1099,11 @@ a {
       bottom: -6.25rem;
       right: 20%; }
 
-#password .mail-form input {
+#passwordForm .mail-form input {
   height: 3rem;
   margin-bottom: 0.625rem; }
 
-#password .mail-form label {
+#passwordForm .mail-form label {
   display: block;
   margin-bottom: 0.625rem;
   text-align: center; }
@@ -1573,7 +1576,7 @@ a {
     justify-content: space-between; }
     #profil-page .com .message-group textarea {
       width: 70%; }
-  #password .mail-form {
+  #passwordForm .mail-form {
     margin: 0 auto;
     width: 70%; } }
 
