@@ -130,9 +130,16 @@ for (var i = 0; i < closeBtn.length; i++){
 }
 
 var loginBtn = document.querySelector("#btn-login");
+var registerBtn = document.querySelector("#btn-register");
 var username = document.querySelector("#email");
 var password = document.querySelector("#password");
 var pError = document.querySelector("#l-error");
+var registerForm = document.querySelector("#register-form");
+var gender = document.querySelector("#gender");
+var lastname = document.querySelector("#lastname");
+var nickname = document.querySelector("#nickname");
+var email = document.querySelector("#email1");
+var phone = document.querySelector("#phone");
 
 loginBtn.onclick = function(event){
     event.preventDefault();
@@ -163,13 +170,15 @@ registerBtn.onclick = function(event){
 
     // loading animation
     var xhr = new XMLHttpRequest();
-    var data = "_gender="+gender.value+"&_name="+name.value+"&_nickname="+nickname.value+"&_email="+email.value+"&_phone="+phone.value;
-    xhr.open("POST", 'wsh', true);
+    var data = "gender="+gender.value+"&name="+lastname.value+"&nickname="+nickname.value+"&email1="+email.value+"&phone="+phone.value;
+
+    xhr.open("POST", registerUrl, true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            // var reponse = JSON.parse(xhr.responseText);
-            if(reponse.code == '400') {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response);
+            if(response.code == '400') {
                 for (var key in response.errors) {
                     if (response.errors.hasOwnProperty(key)) {
                         document.querySelector('#'+key).style.backgroundColor = '#db51513d';

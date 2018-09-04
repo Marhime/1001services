@@ -51,15 +51,7 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, suscipit numquam. Quo error doloremque dolorem necess itatibus quero maniba.</p>
             <form action="resultat.html" id="search" method="GET">
                 <div class="form-group">
-                    <select name="category" class="form-select" id="form-select-cat">
-                        <option value="Plombier">Je recherche</option>
-                        <option value="Plombier">Plombier</option>
-                        <option value="Dentiste">Dentiste</option>
-                        <option value="Cardiologue">Cardiologue</option>
-                        <option value="Vitrier">Vitrier</option>
-                        <option value="Electricien">Electricien</option>
-                        <option value="Garagiste">Garagiste</option>
-                    </select>
+                    <input name="category" class="form-select" id="select-gear" placeholder="Que recherchez vous ?">
                 </div>
                 <div class="form-group" id="locationField">
                     <input name="place" onFocus="geolocate()" placeholder="Où ? (Adresse, ville ...)" id="autocomplete" type="text" class="input-search">
@@ -380,5 +372,10 @@
 <script src="js/main.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD98daFc57pdE2wSEa30bivOgZPjTJEA7A&libraries=places&callback=initAutocomplete"
     async defer></script>
+    <script src="js/selectize.min.js"></script>
+    <script>
+    document.getElementById('select-gear').selectize({
+        sortField: 'text'
+    });</script>
 <!-- endbuild -->
 </html>
