@@ -131,6 +131,7 @@ for (var i = 0; i < closeBtn.length; i++){
 
 var loginBtn = document.querySelector("#btn-login");
 var registerBtn = document.querySelector("#btn-register");
+var cantFindBtn = document.querySelector("#btn-cant");
 var username = document.querySelector("#email");
 var password = document.querySelector("#password");
 var pError = document.querySelector("#l-error");
@@ -140,6 +141,10 @@ var lastname = document.querySelector("#lastname");
 var nickname = document.querySelector("#nickname");
 var email = document.querySelector("#email1");
 var phone = document.querySelector("#phone");
+var emailCF = document.querySelector("#email2");
+var subject = document.querySelector("#subject");
+var message = document.querySelector("#message");
+var cantFindForm = document.querySelector("#cf-form");
 
 loginBtn.onclick = function(event){
     event.preventDefault();
@@ -191,6 +196,41 @@ registerBtn.onclick = function(event){
                     }
                     else{
                         registerForm[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    };
+    xhr.send(data);
+    return false;
+}
+
+cantFindBtn.onclick = function(event){
+    event.preventDefault();
+
+    // loading animation
+    var xhr = new XMLHttpRequest();
+    var data = "email2="+emailCF.value+"&subject="+subject.value+"&message="+message.value;
+
+    xhr.open("POST", cantfindUrl, true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response);
+            if(response.code == '400') {
+                for (var key in response.errors) {
+                    if (response.errors.hasOwnProperty(key)) {
+                        document.querySelector('#'+key).style.backgroundColor = '#db51513d';
+                    }
+                }
+            } else {
+                for (i = 0; i < cantFindForm.length; i++) {
+                    if(cantFindForm[i].style.display == 'none'){
+                        cantFindForm[i].style.display = 'block';
+                    }
+                    else{
+                        cantFindForm[i].style.display = 'none';
                     }
                 }
             }

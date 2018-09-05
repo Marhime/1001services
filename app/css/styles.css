@@ -882,6 +882,7 @@ a {
       text-transform: uppercase; }
     .form-ctn .sign-up-container input[name='nickname'] {
       text-transform: capitalize; }
+    .form-ctn .sign-up-container #success-cf,
     .form-ctn .sign-up-container #success {
       margin-top: 1.25rem;
       display: none;
@@ -1339,6 +1340,30 @@ a {
 
 #profil-page.custom .prest .delete {
   color: #E74C3C; }
+
+.menu-profil {
+  margin-bottom: 1.875rem;
+  display: flex;
+  justify-content: center; }
+  .menu-profil a {
+    font-weight: 600;
+    color: #70b7e5; }
+    .menu-profil a:first-child {
+      margin-right: 1.25rem; }
+
+.change-password {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .change-password .password {
+    margin: auto;
+    width: 100%;
+    max-width: 31.25rem; }
+    .change-password .password input {
+      margin-bottom: 0.625rem; }
+      .change-password .password input:last-child {
+        margin: 0; }
 
 @media (min-width: 768px) {
   #cookies {
