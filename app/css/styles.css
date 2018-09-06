@@ -236,17 +236,6 @@ textarea {
   -webkit-appearance: none;
   font-family: "Raleway", sans-serif; }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
-  background: url("data:image/svg+xml;utf8,<svg fill='#666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>") #FFFFFF;
-  background-size: 1.5625rem;
-  background-position: 98% 50%;
-  background-repeat: no-repeat;
-  cursor: pointer; }
-
 input[type="file"] {
   border: none;
   padding: 0; }

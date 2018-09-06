@@ -1,172 +1,211 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Place Autocomplete Address Form</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <style>
-      #locationField, #controls {
-        position: relative;
-        width: 480px;
-      }
-      #autocomplete {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 99%;
-      }
-      .label {
-        text-align: right;
-        font-weight: bold;
-        width: 100px;
-        color: #303030;
-      }
-      #address {
-        border: 1px solid #000090;
-        background-color: #f0f0ff;
-        width: 480px;
-        padding-right: 2px;
-      }
-      #address td {
-        font-size: 10pt;
-      }
-      .field {
-        width: 99%;
-      }
-      .slimField {
-        width: 80px;
-      }
-      .wideField {
-        width: 200px;
-      }
-      #locationField {
-        height: 20px;
-        margin-bottom: 2px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="locationField">
-      <input id="autocomplete" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
-    </div>
-
-    <table id="address">
-      <tr>
-        <td class="label">Street address</td>
-        <td class="slimField"><input class="field" id="street_number"
-              disabled="true"></input></td>
-        <td class="wideField" colspan="2"><input class="field" id="route"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">City</td>
-        <!-- Note: Selection of address components in this example is typical.
-             You may need to adjust it for the locations relevant to your app. See
-             https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
-        -->
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">State</td>
-        <td class="slimField"><input class="field"
-              id="administrative_area_level_1" disabled="true"></input></td>
-        <td class="label">Zip code</td>
-        <td class="wideField"><input class="field" id="postal_code"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3"><input class="field"
-              id="country" disabled="true"></input></td>
-      </tr>
-    </table>
-
-    <script>
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
-
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-      var placeSearch, autocomplete;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-      };
-
-      function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
-      }
-
-      function fillInAddress() {
-        // Get the place details from the autocomplete object.
-        var place = autocomplete.getPlace();
-
-        for (var component in componentForm) {
-          document.getElementById(component).value = '';
-          document.getElementById(component).disabled = false;
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Selectize.js Demo</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+		<link rel="stylesheet" href="css/selectize.default.css">
+		<!--[if IE 8]><script src="js/es5.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/selectize.js"></script>
+		<script src="js/index.js"></script>
+		<style type="text/css">
+		.demo-animals .scientific {
+			font-weight: normal;
+			opacity: 0.3;
+			margin: 0 0 0 2px;
+		}
+		.demo-animals .scientific::before {
+			content: '(';
+		}
+		.demo-animals .scientific::after {
+			content: ')';
+        }
+        body {
+            margin: 70px 0;
+            padding: 0;
+            font-family: Helvetica, arial, sans-serif;
+            font-size: 15px;
+            color: #454545;
+            background: #fff url(../images/bg.png);
+            text-shadow: 0 1px 0 rgba(0,0,0,0.02);
+            -webkit-font-smoothing: antialiased;
+        }
+        a, a:visited {
+            color: #3fabff;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #008af5;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 300;
+            font-size: 35px;
+            letter-spacing: -1px;
+        }
+        h2 {
+            font-size: 15px;
+            color: #a0a0a0;
+            margin: 30px 0;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        p, .control-group {
+            margin: 0 0 20px 0;
+        }
+        .demo {
+            border-bottom: 1px solid #e8e8e8;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+        .demo:last-child {
+            border-bottom: 0 none;
+        }
+        .demo select, .demo input, .demo .selectize-control {
+            width: 100%;
+        }
+        .demo > *:first-child {
+            margin-top: 0;
+        }
+        .demo > *:last-child {
+            margin-bottom: 0;
+        }
+        .demo .value {
+            margin: 0 0 10px 0;
+            font-size: 12px;
+        }
+        .demo .value span {
+            font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+        }
+        .theme-selector {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        .theme-selector:before {
+            content: 'Themes: ';
+        }
+        .theme-selector a {
+            margin: 0 5px;
+        }
+        .theme-selector a.active {
+            color: #202020;
+            font-weight: bold;
+        }
+        #wrapper {
+            margin: 0;
+        }
+        #wrapper > * {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        pre {
+            background: #f8f8f8;
+            border: 1px solid #f2f2f2;
+            padding: 10px;
+            font-size: 12px;
+            font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+        input[type=button] {
+            margin: 0 10px 0 0;
+            padding: 6px 10px;
+            color: #606060;
+            background: #e0e0e0;
+            border: 0 none;
+            width: auto;
+            display: inline-block;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            -webkit-font-smoothing: antialiased;
+        }
+        .buttons {
+            margin: 0 0 25px 0;
+        }
+        input[type=button]:hover {
+            background: #dadada;
         }
 
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-          var addressType = place.address_components[i].types[0];
-          if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-          }
+        @media only screen and (max-width : 320px) {
+            body {
+                margin: 20px 0;
+            }
+            #wrapper {
+                margin: 0;
+            }
+            #wrapper > * {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .demo {
+                padding: 20px;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0;
+            }
         }
-      }
+		</style>
+	</head>
+    <body>
+		<div id="wrapper">
+			<h1>Selectize.js</h1>
 
-      // Bias the autocomplete object to the user's geographical location,
-      // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD98daFc57pdE2wSEa30bivOgZPjTJEA7A&libraries=places&callback=initAutocomplete"
-        async defer></script>
-  </body>
+			<div class="demo">
+				<h2>Optgroups (programmatic)</h2>
+				<div class="control-group">
+					<select id="select-category" class="categories" placeholder="Vous recherchez"></select>
+				</div>
+				<script>
+				$('#select-category').selectize({
+					options: [
+						{class: 'maison', value: "dog", name: "Dog" },
+						{class: 'maison', value: "cat", name: "Cat" },
+						{class: 'maison', value: "horse", name: "Horse" },
+						{class: 'maison', value: "kangaroo", name: "Kangaroo" },
+						{class: 'bien-etre', value: 'duck', name: 'Duck'},
+						{class: 'bien-etre', value: 'chicken', name: 'Chicken'},
+						{class: 'bien-etre', value: 'ostrich', name: 'Ostrich'},
+						{class: 'bien-etre', value: 'seagull', name: 'Seagull'},
+						{class: 'cours', value: 'snake', name: 'Snake'},
+						{class: 'cours', value: 'lizard', name: 'Lizard'},
+						{class: 'cours', value: 'alligator', name: 'Alligator'},
+						{class: 'cours', value: 'turtle', name: 'Turtle'},
+						{class: 'evenement', value: 'snake', name: 'Snake'},
+						{class: 'evenement', value: 'lizard', name: 'Lizard'},
+						{class: 'evenement', value: 'alligator', name: 'Alligator'},
+						{class: 'evenement', value: 'turtle', name: 'Turtle'}
+					],
+					optgroups: [
+						{value: 'maison', label: 'Maison'},
+						{value: 'bien-etre', label: 'Bien-Etre'},
+						{value: 'cours', label: 'Cours'},
+						{value: 'evenement', label: 'Evenement'}
+					],
+					optgroupField: 'class',
+					labelField: 'name',
+					searchField: ['name'],
+					render: {
+						optgroup_header: function(data, escape) {
+							return '<div class="optgroup-header">' + escape(data.label) + '</div>';
+						}
+					}
+				});
+				</script>
+			</div>
+		</div>
+	</body>
 </html>
