@@ -1,0 +1,55 @@
+#cgv,
+#mentions-legales{
+    padding: rem(50) 0;
+    .intro{
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: justify;
+    }
+    p{
+        color: $dark;
+        margin: 0 0 10px;
+        line-height: 1.2;
+    }
+    h2{
+        color: $blue1;
+        font-size: 32px;
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    h3{
+        font-size: 23px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    a{
+        color: $blue1;
+    }
+}
+
+#mentions-legales{
+    p{
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+}
+
+.conditions-ctn{
+    height: 60vh;
+    overflow-y: scroll;
+    margin-bottom: rem(30);
+    #cgv{
+        padding: rem(10);
+        .intro{
+            word-break: break-word;
+        }
+    }
+}
+.continue{
+    margin-top: rem(50);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 10px;
+}

@@ -11,6 +11,10 @@ $fw-bold: 700;
 $fw-xbold: 800;
 $global-font-size: 16px;
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2){
+    $global-font-size: 12px;
+}
+
 // COULEURS
 $dark-grey: #51555a;
 $placeholder: #51555a;

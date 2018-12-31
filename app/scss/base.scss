@@ -19,6 +19,7 @@ html{
 body{
   font-family: $font;
   color: $dark-grey;
+  -webkit-text-size-adjust: 100%;
   &.menu-open{
     position: fixed;
     width: 100%;
@@ -48,12 +49,15 @@ section{
   &.blue{
     background-color: $blue1;
   }
+  &.light-blue{
+    background-color: rgba($grey, $alpha: 0.2);
+  }
   &.light{
     background-color: $light;
   }
 }
 .tt-01{
-  font-size: em(38);
+  font-size: em(28);
   text-align: center;
   padding-bottom: rem(50);
   font-weight: $fw-reg;
@@ -66,7 +70,7 @@ section{
 .tt-02{
   text-align: center;
   margin-bottom: rem(20);
-  font-size: em(24);
+  font-size: em(22);
   .blue &{
     color: $white;
   }

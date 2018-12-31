@@ -36,10 +36,12 @@ document.addEventListener('click', function(e){
 function stickyNav() {
     var menu = document.getElementById("navigation");
     if(menu){
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
             menu.classList.add('fixed');
+            document.getElementById("logo").src="../images/svg/logo-black.svg";
         } else {
             menu.classList.remove("fixed");
+            document.getElementById("logo").src="../images/svg/logo-white.svg";
         }
     }
 };
@@ -189,7 +191,7 @@ registerBtn.onclick = function(event){
                         document.querySelector('#'+key).style.backgroundColor = '#db51513d';
                     }
                 }
-            } else {
+            } else if(response.code == '200'){
                 for (i = 0; i < registerForm.length; i++) {
                     if(registerForm[i].style.display == 'none'){
                         registerForm[i].style.display = 'block';
@@ -224,7 +226,7 @@ cantFindBtn.onclick = function(event){
                         document.querySelector('#'+key).style.backgroundColor = '#db51513d';
                     }
                 }
-            } else {
+            } else if(response.code == '200'){
                 for (i = 0; i < cantFindForm.length; i++) {
                     if(cantFindForm[i].style.display == 'none'){
                         cantFindForm[i].style.display = 'block';
@@ -310,35 +312,6 @@ cantFindBtn.onclick = function(event){
 }
 
 $('#select-category').selectize({
-    options: [
-        {class: 'maison', value: "menage", name: "Ménage" },
-        {class: 'maison', value: "entretien du gazon", name: "Entretien du gazon" },
-        {class: 'maison', value: "bricolage", name: "Bricolage" },
-        {class: 'maison', value: "Nettoyage de moquette", name: "Nettoyage de moquette" },
-        {class: 'maison', value: "electricite", name: "Eléctricité" },
-        {class: 'maison', value: "plomberie", name: "Plomberie" },
-        {class: 'bien-etre', value: 'coaching sportif', name: 'Coaching sportif'},
-        {class: 'bien-etre', value: 'coaching personnel', name: 'Coaching personnel'},
-        {class: 'bien-etre', value: 'cours de yoga', name: 'Cours de yoga'},
-        {class: 'bien-etre', value: 'nutrition', name: 'Nutrition'},
-        {class: 'cours', value: 'cours de chant', name: 'Cours de chant'},
-        {class: 'cours', value: 'cours de danse', name: 'Cours de yoga'},
-        {class: 'cours', value: 'cours de piano', name: 'Cours de piano'},
-        {class: 'cours', value: 'cours de langues', name: 'Cours de langues'},
-        {class: 'evenement', value: 'dj', name: 'DJ'},
-        {class: 'evenement', value: 'magicien', name: 'Magicien'},
-        {class: 'evenement', value: 'coiffure', name: 'Coiffure'},
-        {class: 'evenement', value: 'fleuriste', name: 'Fleuriste'}
-    ],
-    optgroups: [
-        {value: 'maison', label: 'Maison'},
-        {value: 'bien-etre', label: 'Bien-Etre'},
-        {value: 'cours', label: 'Cours'},
-        {value: 'evenement', label: 'Evenement'}
-    ],
-    // options: optionsList,
-    // optgroups: optgroupsList,
-    optgroupField: 'class',
     labelField: 'name',
     searchField: ['name'],
     render: {
@@ -347,3 +320,8 @@ $('#select-category').selectize({
         }
     }
 });
+
+var spanYear = document.querySelector('#year');
+var d = new Date();
+var n = d.getFullYear();
+spanYear.innerHTML = n;

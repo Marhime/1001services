@@ -32,6 +32,11 @@
                 color: $blue1;
                 font-weight: $fw-bold;
             }
+            iframe{
+                display: block;
+                margin: 0 auto rem(20) auto;
+                max-width: 100%;
+            }
         }
     }
 }

@@ -7,27 +7,48 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: rem(50);
+            &:first-child{
+                margin-bottom: 10px;
+            }
             a{
                 text-decoration: none;
                 color: $white;
                 margin-bottom: rem(10);
+                text-align: center;
                 &:last-of-type{
                     margin: 0;
                 }
+                &:hover{
+                    text-decoration: underline;
+                }
             }
-        }
-        .logo-footer{
-            padding-top: rem(50);
-            p{
-                font-size: em(24);
+            h2{
                 color: $white;
-                font-weight: $fw-bold;
-                text-align: center;
+                font-weight: $fw-sb;
+                margin-bottom: rem(30);
+                font-size: 18px;
+            }
+            .link-contact{
+                margin-top: rem(30);
+                margin-bottom: 0;
+            }
+            .socials{
+                display: flex;
+                justify-content: space-around;
+                a{
+                    margin-right: rem(20);
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+                img{
+                    width: rem(30);
+                    height: rem(30);
+                }
             }
         }
         .contact{
-            padding-top: rem(50);
-            padding-bottom: rem(50);
             text-align: center;
             a{
                 text-decoration: none;
@@ -40,19 +61,43 @@
                 &:last-of-type{
                     margin: 0;
                 }
-                &:first-of-type{
-                    margin-top: rem(20);
-                }
                 
             }
         }
         
     }
-    .copyright{
+    .logo-footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        // p{
+        //     font-size: em(24);
+        //     color: $white;
+        //     font-weight: $fw-bold;
+        //     text-align: center;
+        // }
+        img{
+            display: block;
+            width: rem(125);
+        }
+    }
+    .copyright,
+    .copyright a{
         text-align: center;
         color: $white;
-        opacity: 0.8;
         padding-bottom: rem(10);
-        line-height: 1.2;
+        line-height: 1.8;
+    }
+    .copyright a{
+        margin-left: rem(20);
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    .copyright{
+        a:first-of-type{
+            margin-left: 0;
+        }
     }
 }

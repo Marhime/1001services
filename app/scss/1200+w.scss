@@ -25,4 +25,34 @@
             }
         }
     }
+    #footer{
+        .footer-elems{
+            justify-content: space-around;
+        }
+    }
+
+    #testimonials{
+        .users-testimonials{
+            .block-testi{
+                box-shadow: none;
+                blockquote{
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    .result-map{
+        display: flex;
+        flex-direction: row;
+        .results-ctn{
+            width: calc(60% - 10px);
+        }
+        #map{
+            width: calc(40% - 10px);
+            position: relative;
+            height: rem(420);
+            right: 0;
+        }
+    }
 }
