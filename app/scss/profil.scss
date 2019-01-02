@@ -1,11 +1,11 @@
 #profil-page{
     padding: rem(90) 0 rem(30) 0;
-    background-color: $light;
+    background-color: $white;
     .block-pro{
         background-color: $white;
-        box-shadow: 2px 3px 5px 0px rgba($dark, 0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
         border-radius: 4px;
-        padding: rem(20);
+        padding: rem(10);
         display: flex;
         flex-direction: column;
         margin-bottom: rem(20);
@@ -19,10 +19,34 @@
                 font-weight: 500;
                 color: $blue1;
             }
+            .d-flex{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;            }
             p{
                 line-height: 19px;
-                text-align: center;
+                text-align: left;
             }
+            .hours-days{
+                display: flex;
+                .hours,
+                .days{
+                    width: rem(35);
+                    height: rem(35);
+                    margin-right: 5px;
+                    display: block;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        h2{
+            text-transform: uppercase;
+            color: $blue1;
+            font-weight: $fw-bold;
+            font-size: em(14);
+            margin-bottom: rem(10)
         }
         .menu{
             padding: rem(10);
@@ -104,31 +128,39 @@
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                margin: rem(10) 0;
+                margin-top: rem(10);
+                margin-bottom: rem(5);
                 a{
                     img{
                         width: rem(20);
+                        margin-bottom: rem(5);
                     }
                     &:last-child{
                         margin-right: 0;
                     }
                 }
             }
-            .hours-days{
-                margin: rem(20) auto;
-                .hours,
-                .days{
-                    width: rem(35);
-                    width: rem(35);
-                    margin-right: 5px;
-                    &:last-child{
-                        margin-right: 0;
-                    }
+            .block-flex{
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                img{
+                    margin-bottom: rem(10);
+                    display: block;
+                    width: rem(20);
+                    height: rem(20);
+                    margin-right: rem(10);
+                }
+                p{
+                    font-weight: $fw-sb;
+                    line-height: 1.1;
+                    word-break: break-all;
                 }
             }
             .flex-center{
                 display: flex;
                 justify-content: center;
+                margin-top: rem(10);
                 a{
                     width: calc(50% - 5px);
                     text-transform: uppercase;
@@ -141,8 +173,8 @@
                 }
             }
             .status{
-                font-weight: $fw-bold;
-                color: $blue1;
+                font-weight: $fw-sb;
+                color: $dark;
                 text-align: center;
                 margin: rem(20) 0;
             }
@@ -169,7 +201,7 @@
                 margin-left: auto;
                 margin-right: auto;
                 border-radius: 4px;
-                border-top: 2px solid rgba($grey, 0.2);
+                border-top: 2px solid rgba($grey, 0.5);
             }
             .competences,
             .objectifs{

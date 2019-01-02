@@ -305,42 +305,89 @@
         }
         .results-ctn{
             .card-result{
-                .card-head{
-                    margin-bottom: 0;
-                    .card-right{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-bottom: rem(20);
+                    .avatar{
+                        width: rem(125);
+                        height: rem(125);
+                        display: block;
+                        margin-bottom: 0;
+                        margin-right: rem(10);
+                        object-fit: cover;
+                        align-self: center;
+                    }
+                    .block-flex{
+                        display: flex;
+                        margin-right: rem(20);
+                        flex-wrap: nowrap;
+                        width: auto;
+                        justify-content: flex-start;
                         img{
-                            width: rem(200);
-                            height: rem(200);
-                            margin-bottom: 0;
+                            margin-bottom: rem(10);
+                            display: block;
+                            width: rem(20);
+                            height: rem(20);
+                            margin-right: rem(10);
+                        }
+                        p{
+                            font-weight: $fw-sb;
+                            line-height: 1.1;
+                            word-break: break-all;
                         }
                     }
-                    .card-left{
-                        padding-left: rem(10);
+                    .card-container{
+                        width: 100%;
+                        .card-container-top{
+                            display: flex;
+                            justify-content: space-between;
+                            .card-container-top-left{
+                                padding-right: 0;
+                                margin-right: rem(-90);
+                                .locate{
+                                    color: $blue1;
+                                    font-weight: $fw-bold;
+                                    margin-left: rem(5);
+                                    font-size: rem(16);
+                                }
+                                .name{
+                                    font-weight: $fw-bold;
+                                    text-align: left;
+                                    margin-bottom: rem(5);
+                                    font-size: em(18);
+                                }
+                                .resume{
+                                    margin-bottom: rem(5);
+                                    font-size: em(14);
+                                    padding-right: rem(167);
+                                    text-align: left;
+                                }
+                                .note{
+                                    margin-bottom: rem(10);
+                                    text-align: left;
+                                }
+                            }
+                            .card-container-top-right{
+                                display: flex;
+                                align-items: flex-start;
+                                img{
+                                        width: rem(35);
+                                        width: rem(35);
+                                        margin-right: 5px;
+                                    }
+                                }
+                                .btn-01{
+                                    width: fit-content;
+                                    height: auto;
+                                    padding: 10px 5px;
+                                }
+                            }
+                            .status{
+                                margin-bottom: 0;
+                                text-align: left;
+                            }
                     }
-                }
-                .card-ctn{
-                    display: flex;
-                    flex-wrap: wrap;
-                    flex-direction: row;
-                    & > div {
-                        flex: 50%;
-                        img{
-                            margin-right: rem(5) !important;
-                        }
-                    }
-                }
-                .btn-more{
-                    margin-top: 0;
-                    .btn-01{
-                        margin: auto;
-                    }
-                }
-                &.mobile{
-                    display: none;
-                }
-                &.desktop{
-                    display: flex;
-                }
             }
         }
     }

@@ -249,9 +249,12 @@
         }
     }
     .result-map{
+        display: flex;
         .results-ctn{
             width: calc(70% - 10px);
+            margin-right: rem(20);
             .card-result{
+                margin-bottom: rem(20);
                 .card-head{
                     .card-left{
                         flex-direction: column;
@@ -280,17 +283,8 @@
             #map{
                 width: calc(30% - 10px);
                 position: relative;
-                height: rem(420);
+                height: 100%;
                 right: 0;
-                // &.sticky{
-                //     position: fixed !important;
-                //     top: rem(70);
-                // }
-                .map-abs{
-                    position: absolute;
-                    top: 0;
-                    width: 100%;
-                }
             }
         }
     }
