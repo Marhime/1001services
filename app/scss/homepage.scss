@@ -69,7 +69,7 @@
                     }
                     p{
                         color: $white;
-                        font-size: em(20);
+                        font-size: em(16);
                         font-weight: $fw-reg;
                         transition: 0.4s;
                         z-index: 6;
@@ -89,6 +89,9 @@
     padding-bottom: 0;
     .stats{
         padding-bottom: rem(60);
+        .slick-list{
+            overflow: visible;
+        }
        .block-stat{
            text-align: center;
            .stat-number{
@@ -110,10 +113,48 @@
                    text-decoration: underline;
                    cursor: pointer;
                }
-               &.popin{
-                   img{
-                       display: inline-block;
-                       width: rem(25);
+               .pop{
+                   position: relative;
+                   .underline{
+                       text-decoration: underline;
+                   }
+                   .popover {
+                    background-color: $white;
+                    font-style: normal;
+                    line-height: 1.2;
+                    border-radius: 4px;
+                    bottom: 30px;
+                    color: $dark;
+                    font-size: rem(14);
+                    display: none;
+                    left: -90px;
+                    padding: 7px 10px;
+                    position: absolute;
+                    z-index: 4;
+                    width: rem(200);
+                    overflow: visible !important;
+                    &:before {
+                        border-top: 7px solid $white;
+                        border-right: 7px solid transparent;
+                        border-left: 7px solid transparent;
+                        bottom: -7px;
+                        content: '';
+                        display: block;
+                        left: 50%;
+                        margin-left: -7px;
+                        position: absolute;
+                      }
+                      img{
+                          display: inline-block;
+                          width: rem(30);
+                          margin-right: rem(5);
+                          margin-top: rem(5);
+                      }
+                  }
+               }
+               &.above:hover{
+                   .popover{
+                       display: block;
                    }
                }
            }

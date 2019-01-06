@@ -1,6 +1,8 @@
 $menu = document.querySelector('.mobile-menu');
 $body = document.body;
 $toggle = document.querySelector('.toggle');
+$above = document.querySelector('.above');
+$pop = document.querySelector('.pop');
 
 if($toggle){
     $toggle.addEventListener('click', function(){
@@ -38,10 +40,11 @@ function stickyNav() {
     if(menu){
         if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
             menu.classList.add('fixed');
-            document.getElementById("logo").src="../images/svg/logo-black.svg";
+            document.getElementById("logo").src="/assets/images/svg/logo-black.svg";
         } else {
             menu.classList.remove("fixed");
-            document.getElementById("logo").src="../images/svg/logo-white.svg";
+            if(!menu.classList.contains('white'))
+                document.getElementById("logo").src="/assets/images/svg/logo-white.svg";
         }
     }
 };
@@ -147,6 +150,10 @@ var emailCF = document.querySelector("#email2");
 var subject = document.querySelector("#subject");
 var message = document.querySelector("#message");
 var cantFindForm = document.querySelector("#cf-form");
+var cantfindFields = document.querySelectorAll(".field-cf-element");
+var registerFields = document.querySelectorAll(".register-field");
+var successCf = document.querySelector("#success-cf");
+var successReg = document.querySelector("#success-reg");
 
 loginBtn.onclick = function(event){
     event.preventDefault();
@@ -184,7 +191,6 @@ registerBtn.onclick = function(event){
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
-            console.log(response);
             if(response.code == '400') {
                 for (var key in response.errors) {
                     if (response.errors.hasOwnProperty(key)) {
@@ -192,14 +198,10 @@ registerBtn.onclick = function(event){
                     }
                 }
             } else if(response.code == '200'){
-                for (i = 0; i < registerForm.length; i++) {
-                    if(registerForm[i].style.display == 'none'){
-                        registerForm[i].style.display = 'block';
-                    }
-                    else{
-                        registerForm[i].style.display = 'none';
-                    }
+                for (i = 0; i < registerFields.length; i++) {
+                    registerFields[i].style.display = 'none';
                 }
+                successReg.style.display = "block";
             }
         }
     };
@@ -209,7 +211,7 @@ registerBtn.onclick = function(event){
 
 cantFindBtn.onclick = function(event){
     event.preventDefault();
-
+    cantFindBtn.innerHTML = "Envoi...";
     // loading animation
     var xhr = new XMLHttpRequest();
     var data = "email2="+emailCF.value+"&subject="+subject.value+"&message="+message.value;
@@ -219,7 +221,6 @@ cantFindBtn.onclick = function(event){
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
-            console.log(response);
             if(response.code == '400') {
                 for (var key in response.errors) {
                     if (response.errors.hasOwnProperty(key)) {
@@ -227,14 +228,11 @@ cantFindBtn.onclick = function(event){
                     }
                 }
             } else if(response.code == '200'){
-                for (i = 0; i < cantFindForm.length; i++) {
-                    if(cantFindForm[i].style.display == 'none'){
-                        cantFindForm[i].style.display = 'block';
-                    }
-                    else{
-                        cantFindForm[i].style.display = 'none';
-                    }
+                for (i = 0; i < cantfindFields.length; i++) {
+                    cantfindFields[i].style.display = 'none';
                 }
+
+                successCf.style.display = "block";
             }
         }
     };
@@ -261,34 +259,42 @@ cantFindBtn.onclick = function(event){
     function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
     // location types.
-    autocomplete = new google.maps.places.Autocomplete(
-        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-        {types: ['geocode']});
+    var auto = document.getElementById('autocomplete');
+    if(auto) {
+        autocomplete = new google.maps.places.Autocomplete(
+            auto,
+            {types: ['geocode']});
 
-    // Set initial restrict to the greater list of countries.
-    autocomplete.setComponentRestrictions(
-        {'country': ['fr']});
-    // When the user selects an address from the dropdown, populate the address
-    // fields in the form.
-    autocomplete.addListener('place_changed', fillInAddress);
-    }
+        // Set initial restrict to the greater list of countries.
+        autocomplete.setComponentRestrictions(
+            {'country': ['fr']});
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+        }
 
-    function fillInAddress() {
-    // Get the place details from the autocomplete object.
-    var place = autocomplete.getPlace();
+        function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
 
-    for (var component in componentForm) {
-        document.getElementById(component).value = '';
-        document.getElementById(component).disabled = false;
-    }
+        document.getElementById('latitude').value = place.geometry.location.lat();
+        document.getElementById('longitude').value = place.geometry.location.lng();
 
-    // Get each component of the address from the place details
-    // and fill the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
-        var addressType = place.address_components[i].types[0];
-        if (componentForm[addressType]) {
-        var val = place.address_components[i][componentForm[addressType]];
-        document.getElementById(addressType).value = val;
+        for (var component in componentForm) {
+            if (!!document.getElementById(component + unique)) {
+              document.getElementById(component + unique).value = '';
+              document.getElementById(component + unique).disabled = false;
+            }
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+            }
         }
     }
     }

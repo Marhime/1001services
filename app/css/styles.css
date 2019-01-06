@@ -755,7 +755,7 @@ a {
         #activities .act-container .full-width-act .block-act .flex-sp p,
         #activities .act-container .half-width-act .block-act .flex-sp p {
           color: #FFFFFF;
-          font-size: 1.25em;
+          font-size: 1em;
           font-weight: 400;
           transition: 0.4s;
           z-index: 6;
@@ -769,6 +769,8 @@ a {
   padding-bottom: 0; }
   #stats .stats {
     padding-bottom: 3.75rem; }
+    #stats .stats .slick-list {
+      overflow: visible; }
     #stats .stats .block-stat {
       text-align: center; }
       #stats .stats .block-stat .stat-number {
@@ -788,9 +790,42 @@ a {
           color: #FFFFFF;
           text-decoration: underline;
           cursor: pointer; }
-        #stats .stats .block-stat .stat-desc.popin img {
-          display: inline-block;
-          width: 1.5625rem; }
+        #stats .stats .block-stat .stat-desc .pop {
+          position: relative; }
+          #stats .stats .block-stat .stat-desc .pop .underline {
+            text-decoration: underline; }
+          #stats .stats .block-stat .stat-desc .pop .popover {
+            background-color: #FFFFFF;
+            font-style: normal;
+            line-height: 1.2;
+            border-radius: 4px;
+            bottom: 30px;
+            color: #19181a;
+            font-size: 0.875rem;
+            display: none;
+            left: -90px;
+            padding: 7px 10px;
+            position: absolute;
+            z-index: 4;
+            width: 12.5rem;
+            overflow: visible !important; }
+            #stats .stats .block-stat .stat-desc .pop .popover:before {
+              border-top: 7px solid #FFFFFF;
+              border-right: 7px solid transparent;
+              border-left: 7px solid transparent;
+              bottom: -7px;
+              content: '';
+              display: block;
+              left: 50%;
+              margin-left: -7px;
+              position: absolute; }
+            #stats .stats .block-stat .stat-desc .pop .popover img {
+              display: inline-block;
+              width: 1.875rem;
+              margin-right: 0.3125rem;
+              margin-top: 0.3125rem; }
+        #stats .stats .block-stat .stat-desc.above:hover .popover {
+          display: block; }
 
 #news .news .article {
   color: #19181a;
@@ -1597,7 +1632,7 @@ a {
       color: #70b7e5;
       font-weight: 600;
       display: block;
-      margin-right: 1.25rem; }
+      margin-right: 0.625rem; }
     #profil-page .block-pro.diplomes img {
       width: 100%;
       max-width: 100%;
@@ -2464,13 +2499,12 @@ a {
     .error-page .cloud.last {
       display: none; }
   #profil-page .block-pro {
-    padding: 1.5625rem; }
+    padding: 0.625rem; }
   #profil-page .profil .infos-side .infos {
     display: flex;
     flex-direction: row-reverse; }
     #profil-page .profil .infos-side .infos .left-side {
-      width: 33.3333%;
-      padding-right: 0.625rem; }
+      width: 33.3333%; }
       #profil-page .profil .infos-side .infos .left-side .avatar {
         margin-top: 0; }
       #profil-page .profil .infos-side .infos .left-side .flex-center a {
@@ -2668,7 +2702,6 @@ a {
   .result-map {
     display: flex; }
     .result-map .results-ctn {
-      width: calc(70% - 10px);
       margin-right: 1.25rem; }
       .result-map .results-ctn .card-result {
         margin-bottom: 1.25rem; }
